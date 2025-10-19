@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vienna AR Beams + Dust</title>
+  <title>Vienna AR Beams + 3D Dust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <style>
@@ -92,8 +92,8 @@
         beam.setAttribute('color', t.color);
         beam.setAttribute('opacity', '0.7');
         beam.setAttribute('emissive', t.color);
-        // initial position in front of camera
-        beam.setAttribute('position', `${(i-1.5)*3} 5 -5`);
+        // initial 3D position in front of camera
+        beam.setAttribute('position', `${(i-1.5)*3} 5 -10`);
         container.appendChild(beam);
         beamObjects.push(beam);
       });
@@ -110,9 +110,10 @@
     function initDust(){
       for(let i=0;i<NUM_DUST;i++){
         const dust = document.createElement('a-sphere');
-        dust.setAttribute('radius', 0.1 + Math.random()*0.2);
+        dust.setAttribute('radius', 0.1 + Math.random()*0.15);
         dust.setAttribute('color', 'white');
         dust.setAttribute('opacity', 0.5 + Math.random()*0.5);
+        // 3D positions around camera
         const x = (Math.random()-0.5)*10;
         const y = 1 + Math.random()*5;
         const z = -3 - Math.random()*5;
@@ -128,26 +129,28 @@
     // ------------------------------
     function updateScene(){
       // beams
-      targets.forEach((t, i)=>{
+      targets.forEach((t,i)=>{
         let posX = (i-1.5)*3;
-        let posZ = -5;
+        let posZ = -10;
+        let posY = 5;
         if(userLocation){
           const enu = geoToENU(userLocation, t);
           const headingRad = compassHeading * Math.PI/180;
-          posX = (enu.east/50) * Math.cos(-headingRad) - (enu.north/50) * Math.sin(-headingRad);
-          posZ = -((enu.east/50) * Math.sin(-headingRad) + (enu.north/50) * Math.cos(-headingRad));
+          // scale down GPS distances for 3D visibility
+          posX = (enu.east*0.01) * Math.cos(-headingRad) - (enu.north*0.01) * Math.sin(-headingRad);
+          posZ = -((enu.east*0.01) * Math.sin(-headingRad) + (enu.north*0.01) * Math.cos(-headingRad));
+          posY = 5 + Math.random()*2; // optional slight height variation
         }
         const beam = beamObjects[i];
         const currentPos = beam.object3D.position;
-        // simple jittered movement
+        // jittered smooth movement
         currentPos.x += (posX - currentPos.x) * 0.1;
         currentPos.z += (posZ - currentPos.z) * 0.1;
-        currentPos.y = 5;
+        currentPos.y += (posY - currentPos.y) * 0.1;
       });
 
       // floating dust
       dustObjects.forEach(d=>{
-        // small random oscillation
         const p = d.el.object3D.position;
         p.x = d.basePos.x + (Math.random()-0.5)*0.05;
         p.y = d.basePos.y + (Math.random()-0.5)*0.05;
