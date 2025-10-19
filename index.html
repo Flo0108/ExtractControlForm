@@ -53,7 +53,6 @@
 
     window.addEventListener('deviceorientationabsolute', e => {
       if(e.alpha !== null){
-        // low-pass smoothing
         smoothedAlpha = smoothedAlpha * (1 - alphaSmoothing) + e.alpha * alphaSmoothing;
         compassHeading = smoothedAlpha;
       }
@@ -71,6 +70,7 @@
 
     const R = 6378137; // meters
     const container = document.getElementById('beams-container');
+    const beamObjects = [];
 
     function geoToENU(origin, target){
       const dLat = (target.lat - origin.lat) * Math.PI/180;
@@ -82,35 +82,41 @@
     }
 
     // ------------------------------
-    // 4️⃣ Smooth interpolation
+    // 4️⃣ Initialize beams after A-Frame is ready
     // ------------------------------
-    const beamObjects = [];
-
-    function updateBeams(){
-      if(container.children.length === 0){
-        // initialize beams
-        targets.forEach(t => {
-          const beam = document.createElement('a-cylinder');
-          beam.setAttribute('radius', '20');
-          beam.setAttribute('height', '100');
-          beam.setAttribute('color', t.color);
-          beam.setAttribute('opacity', '0.7');
-          beam.setAttribute('emissive', t.color);
-          container.appendChild(beam);
-          beamObjects.push(beam);
-        });
-      }
-
+    function initBeams(){
       targets.forEach((t, i) => {
-        let posX = 0, posZ = -3; // default desktop position
+        const beam = document.createElement('a-cylinder');
+        beam.setAttribute('radius', '1');
+        beam.setAttribute('height', '10');
+        beam.setAttribute('color', t.color);
+        beam.setAttribute('opacity', '0.7');
+        beam.setAttribute('emissive', t.color);
+        // Default starting position in front of camera
+        beam.setAttribute('position', `${(i-1.5)*3} 5 -5`);
+        container.appendChild(beam);
+        beamObjects.push(beam);
+      });
+    }
+
+    window.addEventListener('load', initBeams);
+
+    // ------------------------------
+    // 5️⃣ Update beam positions smoothly
+    // ------------------------------
+    function updateBeams(){
+      targets.forEach((t, i) => {
+        let posX = (i-1.5)*3; // default desktop spread
+        let posZ = -5;
         if(userLocation){
           const enu = geoToENU(userLocation, t);
           const headingRad = compassHeading * Math.PI / 180;
-          posX = enu.east * Math.cos(-headingRad) - enu.north * Math.sin(-headingRad);
-          posZ = -(enu.east * Math.sin(-headingRad) + enu.north * Math.cos(-headingRad));
+          // scale down GPS coords for visibility
+          posX = (enu.east/50) * Math.cos(-headingRad) - (enu.north/50) * Math.sin(-headingRad);
+          posZ = -((enu.east/50) * Math.sin(-headingRad) + (enu.north/50) * Math.cos(-headingRad));
         }
 
-        // Smooth movement: interpolate current position
+        // Interpolate smoothly
         const beam = beamObjects[i];
         const currentPos = beam.object3D.position;
         currentPos.x += (posX - currentPos.x) * 0.1;
@@ -120,7 +126,7 @@
     }
 
     // ------------------------------
-    // 5️⃣ Animation loop
+    // 6️⃣ Animation loop
     // ------------------------------
     function animate(){
       updateBeams();
