@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AR Beam Vienna</title>
+  <title>Vienna AR Beams</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <style>
@@ -31,32 +31,48 @@
   </a-scene>
 
   <script>
+    // ------------------------------
+    // 1️⃣ Webcam feed
+    // ------------------------------
     const video = document.getElementById('webcam');
     navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
       .then(stream => video.srcObject = stream)
       .catch(err => console.error('Camera error:', err));
 
     // ------------------------------
-    // 1️⃣ User GPS & Compass
+    // 2️⃣ User GPS & compass
     // ------------------------------
     let userLocation = null;
     let compassHeading = 0;
+    let smoothedAlpha = 0;
+    const alphaSmoothing = 0.1;
 
     navigator.geolocation.watchPosition(pos => {
       userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
     }, err => console.error('GPS error', err), { enableHighAccuracy:true });
 
-    window.addEventListener('deviceorientationabsolute', event => {
-      if(event.alpha !== null) compassHeading = event.alpha;
+    window.addEventListener('deviceorientationabsolute', e => {
+      if(e.alpha !== null){
+        // low-pass smoothing
+        smoothedAlpha = smoothedAlpha * (1 - alphaSmoothing) + e.alpha * alphaSmoothing;
+        compassHeading = smoothedAlpha;
+      }
     });
 
     // ------------------------------
-    // 2️⃣ Target Vienna Westbahnhof
+    // 3️⃣ Targets across Vienna
     // ------------------------------
-    const target = { lat: 48.2002, lon: 16.3525 };
-    const R = 6378137; // meters
+    const targets = [
+      { lat: 48.2002, lon: 16.3525, color: 'cyan', name: 'Westbahnhof' },
+      { lat: 48.2100, lon: 16.3700, color: 'magenta', name: 'Stephansplatz' },
+      { lat: 48.1840, lon: 16.3330, color: 'yellow', name: 'Schönbrunn' },
+      { lat: 48.2200, lon: 16.3600, color: 'lime', name: 'Prater' }
+    ];
 
-    function geoToENU(origin, target) {
+    const R = 6378137; // meters
+    const container = document.getElementById('beams-container');
+
+    function geoToENU(origin, target){
       const dLat = (target.lat - origin.lat) * Math.PI/180;
       const dLon = (target.lon - origin.lon) * Math.PI/180;
       const lat1 = origin.lat * Math.PI/180;
@@ -66,33 +82,51 @@
     }
 
     // ------------------------------
-    // 3️⃣ Render beam
+    // 4️⃣ Smooth interpolation
     // ------------------------------
-    const container = document.getElementById('beams-container');
+    const beamObjects = [];
 
-    function updateBeam() {
-      container.innerHTML = '';
-      let posX=0, posZ=-3; // default for desktop
-
-      if(userLocation){
-        const enu = geoToENU(userLocation, target);
-        const headingRad = compassHeading * Math.PI/180;
-        posX = enu.east * Math.cos(-headingRad) - enu.north * Math.sin(-headingRad);
-        posZ = -(enu.east * Math.sin(-headingRad) + enu.north * Math.cos(-headingRad));
+    function updateBeams(){
+      if(container.children.length === 0){
+        // initialize beams
+        targets.forEach(t => {
+          const beam = document.createElement('a-cylinder');
+          beam.setAttribute('radius', '1');
+          beam.setAttribute('height', '10');
+          beam.setAttribute('color', t.color);
+          beam.setAttribute('opacity', '0.7');
+          beam.setAttribute('emissive', t.color);
+          container.appendChild(beam);
+          beamObjects.push(beam);
+        });
       }
 
-      const beam = document.createElement('a-cylinder');
-      beam.setAttribute('position', `${posX} 5 ${posZ}`);
-      beam.setAttribute('radius', '30');
-      beam.setAttribute('height', '400');
-      beam.setAttribute('color', 'cyan');
-      beam.setAttribute('opacity', '0.9');
-      beam.setAttribute('emissive', 'red');
+      targets.forEach((t, i) => {
+        let posX = 0, posZ = -3; // default desktop position
+        if(userLocation){
+          const enu = geoToENU(userLocation, t);
+          const headingRad = compassHeading * Math.PI / 180;
+          posX = enu.east * Math.cos(-headingRad) - enu.north * Math.sin(-headingRad);
+          posZ = -(enu.east * Math.sin(-headingRad) + enu.north * Math.cos(-headingRad));
+        }
 
-      container.appendChild(beam);
+        // Smooth movement: interpolate current position
+        const beam = beamObjects[i];
+        const currentPos = beam.object3D.position;
+        currentPos.x += (posX - currentPos.x) * 0.1;
+        currentPos.z += (posZ - currentPos.z) * 0.1;
+        currentPos.y = 5; // fixed height
+      });
     }
 
-    setInterval(updateBeam, 100);
+    // ------------------------------
+    // 5️⃣ Animation loop
+    // ------------------------------
+    function animate(){
+      updateBeams();
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
