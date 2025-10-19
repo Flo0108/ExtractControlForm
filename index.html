@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR Beam Vienna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <style>
+    body, html { margin:0; padding:0; overflow:hidden; }
+    video#webcam {
+      position: fixed; top:0; left:0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    a-scene {
+      position:absolute; top:0; left:0;
+      width:100vw; height:100vh;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- Webcam background -->
+  <video id="webcam" autoplay playsinline muted></video>
+
+  <!-- 3D Scene -->
+  <a-scene embedded renderer="alpha: true">
+    <a-entity id="beams-container"></a-entity>
+    <a-entity id="camera" camera look-controls="enabled:false"></a-entity>
+  </a-scene>
+
+  <script>
+    const video = document.getElementById('webcam');
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+      .then(stream => video.srcObject = stream)
+      .catch(err => console.error('Camera error:', err));
+
+    // ------------------------------
+    // 1️⃣ User GPS & Compass
+    // ------------------------------
+    let userLocation = null;
+    let compassHeading = 0;
+
+    navigator.geolocation.watchPosition(pos => {
+      userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+    }, err => console.error('GPS error', err), { enableHighAccuracy:true });
+
+    window.addEventListener('deviceorientationabsolute', event => {
+      if(event.alpha !== null) compassHeading = event.alpha;
+    });
+
+    // ------------------------------
+    // 2️⃣ Target Vienna Westbahnhof
+    // ------------------------------
+    const target = { lat: 48.2002, lon: 16.3525 };
+    const R = 6378137; // meters
+
+    function geoToENU(origin, target) {
+      const dLat = (target.lat - origin.lat) * Math.PI/180;
+      const dLon = (target.lon - origin.lon) * Math.PI/180;
+      const lat1 = origin.lat * Math.PI/180;
+      const east = dLon * R * Math.cos(lat1);
+      const north = dLat * R;
+      return { east, north };
+    }
+
+    // ------------------------------
+    // 3️⃣ Render beam
+    // ------------------------------
+    const container = document.getElementById('beams-container');
+
+    function updateBeam() {
+      container.innerHTML = '';
+      let posX=0, posZ=-3; // default for desktop
+
+      if(userLocation){
+        const enu = geoToENU(userLocation, target);
+        const headingRad = compassHeading * Math.PI/180;
+        posX = enu.east * Math.cos(-headingRad) - enu.north * Math.sin(-headingRad);
+        posZ = -(enu.east * Math.sin(-headingRad) + enu.north * Math.cos(-headingRad));
+      }
+
+      const beam = document.createElement('a-cylinder');
+      beam.setAttribute('position', `${posX} 5 ${posZ}`);
+      beam.setAttribute('radius', '30');
+      beam.setAttribute('height', '400');
+      beam.setAttribute('color', 'cyan');
+      beam.setAttribute('opacity', '0.9');
+      beam.setAttribute('emissive', 'red');
+
+      container.appendChild(beam);
+    }
+
+    setInterval(updateBeam, 100);
+  </script>
+</body>
+</html>
