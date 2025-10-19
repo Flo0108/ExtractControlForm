@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AR Beam Vienna</title>
+  <title>Vienna AR Beams + 3D Dust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <style>
@@ -24,39 +24,55 @@
   <!-- Webcam background -->
   <video id="webcam" autoplay playsinline muted></video>
 
-  <!-- 3D Scene -->
   <a-scene embedded renderer="alpha: true">
     <a-entity id="beams-container"></a-entity>
+    <a-entity id="dust-container"></a-entity>
     <a-entity id="camera" camera look-controls="enabled:false"></a-entity>
   </a-scene>
 
   <script>
+    // ------------------------------
+    // 1️⃣ Webcam feed
+    // ------------------------------
     const video = document.getElementById('webcam');
     navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
       .then(stream => video.srcObject = stream)
       .catch(err => console.error('Camera error:', err));
 
     // ------------------------------
-    // 1️⃣ User GPS & Compass
+    // 2️⃣ GPS + compass
     // ------------------------------
     let userLocation = null;
     let compassHeading = 0;
+    let smoothedAlpha = 0;
+    const alphaSmoothing = 0.1;
 
     navigator.geolocation.watchPosition(pos => {
       userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
     }, err => console.error('GPS error', err), { enableHighAccuracy:true });
 
-    window.addEventListener('deviceorientationabsolute', event => {
-      if(event.alpha !== null) compassHeading = event.alpha;
+    window.addEventListener('deviceorientationabsolute', e => {
+      if(e.alpha !== null){
+        smoothedAlpha = smoothedAlpha * (1 - alphaSmoothing) + e.alpha * alphaSmoothing;
+        compassHeading = smoothedAlpha;
+      }
     });
 
     // ------------------------------
-    // 2️⃣ Target Vienna Westbahnhof
+    // 3️⃣ Vienna targets
     // ------------------------------
-    const target = { lat: 48.2002, lon: 16.3525 };
-    const R = 6378137; // meters
+    const targets = [
+      { lat: 48.2002, lon: 16.3525, color: 'cyan', name: 'Westbahnhof' },
+      { lat: 48.1840, lon: 16.3330, color: 'yellow', name: 'Schönbrunn' },
+      { lat: 48.1857, lon: 16.3128, color: 'magenta', name: 'Gloriette' },
+      { lat: 48.2100, lon: 16.3700, color: 'lime', name: 'Stephansplatz' }
+    ];
 
-    function geoToENU(origin, target) {
+    const R = 6378137;
+    const container = document.getElementById('beams-container');
+    const beamObjects = [];
+
+    function geoToENU(origin, target){
       const dLat = (target.lat - origin.lat) * Math.PI/180;
       const dLon = (target.lon - origin.lon) * Math.PI/180;
       const lat1 = origin.lat * Math.PI/180;
@@ -66,33 +82,84 @@
     }
 
     // ------------------------------
-    // 3️⃣ Render beam
+    // 4️⃣ Initialize beams
     // ------------------------------
-    const container = document.getElementById('beams-container');
-
-    function updateBeam() {
-      container.innerHTML = '';
-      let posX=0, posZ=-3; // default for desktop
-
-      if(userLocation){
-        const enu = geoToENU(userLocation, target);
-        const headingRad = compassHeading * Math.PI/180;
-        posX = enu.east * Math.cos(-headingRad) - enu.north * Math.sin(-headingRad);
-        posZ = -(enu.east * Math.sin(-headingRad) + enu.north * Math.cos(-headingRad));
-      }
-
-      const beam = document.createElement('a-cylinder');
-      beam.setAttribute('position', `${posX} 5 ${posZ}`);
-      beam.setAttribute('radius', '50');
-      beam.setAttribute('height', '400');
-      beam.setAttribute('color', 'cyan');
-      beam.setAttribute('opacity', '0.9');
-      beam.setAttribute('emissive', 'red');
-
-      container.appendChild(beam);
+    function initBeams(){
+      targets.forEach((t, i) => {
+        const beam = document.createElement('a-cylinder');
+        beam.setAttribute('radius', '1');
+        beam.setAttribute('height', '10');
+        beam.setAttribute('color', t.color);
+        beam.setAttribute('opacity', '0.7');
+        beam.setAttribute('emissive', t.color);
+        // initial 3D position in front of camera
+        beam.setAttribute('position', `${(i-1.5)*3} 5 -10`);
+        container.appendChild(beam);
+        beamObjects.push(beam);
+      });
     }
+    window.addEventListener('load', initBeams);
 
-    setInterval(updateBeam, 100);
+    // ------------------------------
+    // 5️⃣ Initialize floating dust nodes
+    // ------------------------------
+    const dustContainer = document.getElementById('dust-container');
+    const dustObjects = [];
+    const NUM_DUST = 50;
+
+    function initDust(){
+      for(let i=0;i<NUM_DUST;i++){
+        const dust = document.createElement('a-sphere');
+        dust.setAttribute('radius', 0.1 + Math.random()*0.15);
+        dust.setAttribute('color', 'white');
+        dust.setAttribute('opacity', 0.5 + Math.random()*0.5);
+        // 3D positions around camera
+        const x = (Math.random()-0.5)*10;
+        const y = 1 + Math.random()*5;
+        const z = -3 - Math.random()*5;
+        dust.setAttribute('position', `${x} ${y} ${z}`);
+        dustContainer.appendChild(dust);
+        dustObjects.push({el:dust, basePos:{x,y,z}});
+      }
+    }
+    window.addEventListener('load', initDust);
+
+    // ------------------------------
+    // 6️⃣ Update beams + dust
+    // ------------------------------
+    function updateScene(){
+      // beams
+      targets.forEach((t,i)=>{
+        let posX = (i-1.5)*3;
+        let posZ = -10;
+        let posY = 5;
+        if(userLocation){
+          const enu = geoToENU(userLocation, t);
+          const headingRad = compassHeading * Math.PI/180;
+          // scale down GPS distances for 3D visibility
+          posX = (enu.east*0.01) * Math.cos(-headingRad) - (enu.north*0.01) * Math.sin(-headingRad);
+          posZ = -((enu.east*0.01) * Math.sin(-headingRad) + (enu.north*0.01) * Math.cos(-headingRad));
+          posY = 5 + Math.random()*2; // optional slight height variation
+        }
+        const beam = beamObjects[i];
+        const currentPos = beam.object3D.position;
+        // jittered smooth movement
+        currentPos.x += (posX - currentPos.x) * 0.1;
+        currentPos.z += (posZ - currentPos.z) * 0.1;
+        currentPos.y += (posY - currentPos.y) * 0.1;
+      });
+
+      // floating dust
+      dustObjects.forEach(d=>{
+        const p = d.el.object3D.position;
+        p.x = d.basePos.x + (Math.random()-0.5)*0.05;
+        p.y = d.basePos.y + (Math.random()-0.5)*0.05;
+        p.z = d.basePos.z + (Math.random()-0.5)*0.05;
+      });
+
+      requestAnimationFrame(updateScene);
+    }
+    updateScene();
   </script>
 </body>
 </html>
