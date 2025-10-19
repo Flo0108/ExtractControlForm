@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vienna AR Beams</title>
+  <title>Vienna AR Beams + Dust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <style>
@@ -24,9 +24,9 @@
   <!-- Webcam background -->
   <video id="webcam" autoplay playsinline muted></video>
 
-  <!-- 3D Scene -->
   <a-scene embedded renderer="alpha: true">
     <a-entity id="beams-container"></a-entity>
+    <a-entity id="dust-container"></a-entity>
     <a-entity id="camera" camera look-controls="enabled:false"></a-entity>
   </a-scene>
 
@@ -40,7 +40,7 @@
       .catch(err => console.error('Camera error:', err));
 
     // ------------------------------
-    // 2️⃣ User GPS & compass
+    // 2️⃣ GPS + compass
     // ------------------------------
     let userLocation = null;
     let compassHeading = 0;
@@ -59,16 +59,16 @@
     });
 
     // ------------------------------
-    // 3️⃣ Targets across Vienna
+    // 3️⃣ Vienna targets
     // ------------------------------
     const targets = [
       { lat: 48.2002, lon: 16.3525, color: 'cyan', name: 'Westbahnhof' },
-      { lat: 48.2100, lon: 16.3700, color: 'magenta', name: 'Stephansplatz' },
       { lat: 48.1840, lon: 16.3330, color: 'yellow', name: 'Schönbrunn' },
-      { lat: 48.2200, lon: 16.3600, color: 'lime', name: 'Prater' }
+      { lat: 48.1857, lon: 16.3128, color: 'magenta', name: 'Gloriette' },
+      { lat: 48.2100, lon: 16.3700, color: 'lime', name: 'Stephansplatz' }
     ];
 
-    const R = 6378137; // meters
+    const R = 6378137;
     const container = document.getElementById('beams-container');
     const beamObjects = [];
 
@@ -82,7 +82,7 @@
     }
 
     // ------------------------------
-    // 4️⃣ Initialize beams after A-Frame is ready
+    // 4️⃣ Initialize beams
     // ------------------------------
     function initBeams(){
       targets.forEach((t, i) => {
@@ -92,47 +92,71 @@
         beam.setAttribute('color', t.color);
         beam.setAttribute('opacity', '0.7');
         beam.setAttribute('emissive', t.color);
-        // Default starting position in front of camera
+        // initial position in front of camera
         beam.setAttribute('position', `${(i-1.5)*3} 5 -5`);
         container.appendChild(beam);
         beamObjects.push(beam);
       });
     }
-
     window.addEventListener('load', initBeams);
 
     // ------------------------------
-    // 5️⃣ Update beam positions smoothly
+    // 5️⃣ Initialize floating dust nodes
     // ------------------------------
-    function updateBeams(){
-      targets.forEach((t, i) => {
-        let posX = (i-1.5)*3; // default desktop spread
+    const dustContainer = document.getElementById('dust-container');
+    const dustObjects = [];
+    const NUM_DUST = 50;
+
+    function initDust(){
+      for(let i=0;i<NUM_DUST;i++){
+        const dust = document.createElement('a-sphere');
+        dust.setAttribute('radius', 0.1 + Math.random()*0.2);
+        dust.setAttribute('color', 'white');
+        dust.setAttribute('opacity', 0.5 + Math.random()*0.5);
+        const x = (Math.random()-0.5)*10;
+        const y = 1 + Math.random()*5;
+        const z = -3 - Math.random()*5;
+        dust.setAttribute('position', `${x} ${y} ${z}`);
+        dustContainer.appendChild(dust);
+        dustObjects.push({el:dust, basePos:{x,y,z}});
+      }
+    }
+    window.addEventListener('load', initDust);
+
+    // ------------------------------
+    // 6️⃣ Update beams + dust
+    // ------------------------------
+    function updateScene(){
+      // beams
+      targets.forEach((t, i)=>{
+        let posX = (i-1.5)*3;
         let posZ = -5;
         if(userLocation){
           const enu = geoToENU(userLocation, t);
-          const headingRad = compassHeading * Math.PI / 180;
-          // scale down GPS coords for visibility
+          const headingRad = compassHeading * Math.PI/180;
           posX = (enu.east/50) * Math.cos(-headingRad) - (enu.north/50) * Math.sin(-headingRad);
           posZ = -((enu.east/50) * Math.sin(-headingRad) + (enu.north/50) * Math.cos(-headingRad));
         }
-
-        // Interpolate smoothly
         const beam = beamObjects[i];
         const currentPos = beam.object3D.position;
+        // simple jittered movement
         currentPos.x += (posX - currentPos.x) * 0.1;
         currentPos.z += (posZ - currentPos.z) * 0.1;
-        currentPos.y = 5; // fixed height
+        currentPos.y = 5;
       });
-    }
 
-    // ------------------------------
-    // 6️⃣ Animation loop
-    // ------------------------------
-    function animate(){
-      updateBeams();
-      requestAnimationFrame(animate);
+      // floating dust
+      dustObjects.forEach(d=>{
+        // small random oscillation
+        const p = d.el.object3D.position;
+        p.x = d.basePos.x + (Math.random()-0.5)*0.05;
+        p.y = d.basePos.y + (Math.random()-0.5)*0.05;
+        p.z = d.basePos.z + (Math.random()-0.5)*0.05;
+      });
+
+      requestAnimationFrame(updateScene);
     }
-    animate();
+    updateScene();
   </script>
 </body>
 </html>
