@@ -32,23 +32,11 @@ map.on('locationerror', e => {
   alert("Unable to get your location. Please allow location access.");
 });
 
-// Load existing pins from server
-async function loadPins() {
-  try {
-    const res = await fetch('/getPins');
-    const pins = await res.json();
-    pins.forEach(pin => {
-      L.marker([pin.lat, pin.lng])
-        .addTo(map)
-        .bindPopup(`<b>${pin.note}</b><br>Tags: ${pin.tags.join(', ')}`);
-    });
-  } catch (err) {
-    console.error("Failed to load pins:", err);
-  }
-}
+
 
 loadPins();
 
+// Drop a new pin
 // Drop a new pin
 map.on('click', async e => {
   const lat = e.latlng.lat;
@@ -58,7 +46,7 @@ map.on('click', async e => {
   if (!note) return;
 
   const tagsInput = prompt("Enter tags (comma-separated):");
-  const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()) : [];
+  const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
 
   try {
     const res = await fetch('/addPin', {
@@ -68,13 +56,28 @@ map.on('click', async e => {
     });
     const pin = await res.json();
 
-    // Add to map
+    // Add to map with safe handling for tags
     L.marker([pin.lat, pin.lng])
       .addTo(map)
-      .bindPopup(`<b>${pin.note}</b><br>Tags: ${pin.tags.join(', ')}`)
+      .bindPopup(`<b>${pin.note}</b>${pin.tags && pin.tags.length ? '<br>Tags: ' + pin.tags.join(', ') : ''}`)
       .openPopup();
   } catch (err) {
     console.error("Failed to save pin:", err);
     alert("Failed to save pin.");
   }
 });
+
+// Load existing pins from server
+async function loadPins() {
+  try {
+    const res = await fetch('/getPins');
+    const pins = await res.json();
+    pins.forEach(pin => {
+      L.marker([pin.lat, pin.lng])
+        .addTo(map)
+        .bindPopup(`<b>${pin.note}</b>${pin.tags && pin.tags.length ? '<br>Tags: ' + pin.tags.join(', ') : ''}`);
+    });
+  } catch (err) {
+    console.error("Failed to load pins:", err);
+  }
+}
