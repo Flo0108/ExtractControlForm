@@ -22,7 +22,7 @@ if (!fs.existsSync(DATA_FILE) || fs.readFileSync(DATA_FILE, 'utf8') === '') {
 // GET all pins
 app.get('/getPins', async (req, res) => {
   try {
-    const pins = await fs.readJson(DATA_FILE);
+    const pins = await fs.readJson(DATA_FILE).catch(() => []);
     res.json(pins);
   } catch (err) {
     console.error(err);

@@ -12,6 +12,7 @@ map.locate({ watch: true, enableHighAccuracy: true });
 map.on('locationfound', e => {
   const lat = e.latitude;
   const lng = e.longitude;
+
   if (!userMarker) {
     userMarker = L.circleMarker([lat, lng], {
       radius: 8,
@@ -24,9 +25,10 @@ map.on('locationfound', e => {
     userMarker.setLatLng([lat, lng]);
   }
 });
+
 map.on('locationerror', e => console.error("Location error:", e.message));
 
-// Load pins from server
+// Load all saved pins
 async function loadPins() {
   try {
     const res = await fetch('/getPins');
@@ -42,7 +44,7 @@ async function loadPins() {
 }
 loadPins();
 
-// Drop new pin
+// Drop a new pin
 map.on('click', async e => {
   const lat = e.latlng.lat;
   const lng = e.latlng.lng;
