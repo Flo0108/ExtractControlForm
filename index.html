@@ -1,108 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>AR Beams Vienna</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <title>Live Location Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
   <style>
-    body, html { margin:0; padding:0; overflow:hidden; }
-    video#webcam {
-      position: fixed; top:0; left:0;
-      width: 100vw; height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-    a-scene {
-      position:absolute; top:0; left:0;
-      width:100vw; height:100vh;
-      background: transparent;
-    }
+    body, html { margin: 0; padding: 0; height: 100%; }
+    #map { height: 100%; }
   </style>
 </head>
+
 <body>
-  <video id="webcam" autoplay playsinline muted></video>
-  <a-scene embedded renderer="alpha: true">
-    <a-entity id="beams-container"></a-entity>
-    <a-entity id="camera" camera look-controls="enabled:false"></a-entity>
-  </a-scene>
+  <div id="map"></div>
 
-  <script>
-    // ------------------------------
-    // Webcam
-    // ------------------------------
-    const video = document.getElementById('webcam');
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-      .then(stream => video.srcObject = stream)
-      .catch(err => console.error('Camera error:', err));
-
-    // ------------------------------
-    // GPS + compass
-    // ------------------------------
-    let userLocation = null;
-    let compassHeading = 0;
-
-    navigator.geolocation.watchPosition(pos => {
-      userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-    }, err => console.error(err), { enableHighAccuracy:true });
-
-    window.addEventListener('deviceorientationabsolute', e => {
-      if(e.alpha !== null) compassHeading = e.alpha;
-    });
-
-    // ------------------------------
-    // Vienna locations
-    // ------------------------------
-    const targets = [
-      { name:'Westbahnhof', lat:48.2002, lon:16.3525, color:'cyan' },
-      { name:'Schönbrunn', lat:48.1840, lon:16.3330, color:'yellow' },
-      { name:'Gloriette', lat:48.1857, lon:16.3128, color:'magenta' },
-      { name:'Stephansplatz', lat:48.2100, lon:16.3700, color:'lime' },
-      { name:'Belvedere', lat:48.1914, lon:16.3800, color:'orange' },
-      { name:'Prater', lat:48.2167, lon:16.3967, color:'pink' }
-    ];
-
-    const R = 6378137; // Earth radius
-    const container = document.getElementById('beams-container');
-
-    // Convert GPS -> East/North in meters
-    function geoToENU(origin,target){
-      const dLat = (target.lat - origin.lat) * Math.PI/180;
-      const dLon = (target.lon - origin.lon) * Math.PI/180;
-      const lat1 = origin.lat * Math.PI/180;
-      const east = dLon*R*Math.cos(lat1);
-      const north = dLat*R;
-      return { east, north };
-    }
-
-    // ------------------------------
-    // Render/update beams
-    // ------------------------------
-    function updateBeams(){
-      container.innerHTML = ''; // clear old
-      if(!userLocation) return;
-
-      targets.forEach(t=>{
-        const enu = geoToENU(userLocation,t);
-        const headingRad = compassHeading*Math.PI/180;
-
-        // rotate relative to heading
-        const posX = enu.east*Math.cos(-headingRad) - enu.north*Math.sin(-headingRad);
-        const posZ = -(enu.east*Math.sin(-headingRad) + enu.north*Math.cos(-headingRad));
-
-        const beam = document.createElement('a-cylinder');
-        beam.setAttribute('position', `${posX} 200 ${posZ}`); // very tall beam
-        beam.setAttribute('radius', '50');
-        beam.setAttribute('height', '400');
-        beam.setAttribute('color', t.color);
-        beam.setAttribute('opacity', '0.9');
-        beam.setAttribute('emissive', t.color);
-
-        container.appendChild(beam);
-      });
-    }
-
-    setInterval(updateBeams, 100); // refresh 10x/sec
-  </script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
