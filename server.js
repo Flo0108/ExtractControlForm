@@ -8,6 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'pins.json');
 
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -18,29 +19,41 @@ if (!fs.existsSync(DATA_FILE) || fs.readFileSync(DATA_FILE, 'utf8') === '') {
   fs.writeJsonSync(DATA_FILE, []);
 }
 
-// Get all pins
+// GET all pins
 app.get('/getPins', async (req, res) => {
-  const pins = await fs.readJson(DATA_FILE);
-  res.json(pins);
+  try {
+    const pins = await fs.readJson(DATA_FILE);
+    res.json(pins);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to read pins' });
+  }
 });
 
-// Add a new pin
+// POST a new pin
 app.post('/addPin', async (req, res) => {
-  const { lat, lng, note, tags } = req.body;
-  if (!lat || !lng) return res.status(400).json({ error: "lat/lng required" });
+  try {
+    const { lat, lng, note, tags } = req.body;
+    if (lat == null || lng == null) return res.status(400).json({ error: 'lat/lng required' });
 
-  const pins = await fs.readJson(DATA_FILE);
-  const newPin = {
-    id: Date.now(),
-    lat,
-    lng,
-    note: note || '',
-    tags: tags || [],
-    created_at: new Date().toISOString()
-  };
-  pins.push(newPin);
-  await fs.writeJson(DATA_FILE, pins);
-  res.json(newPin);
+    const pins = await fs.readJson(DATA_FILE);
+    const newPin = {
+      id: Date.now(),
+      lat,
+      lng,
+      note: note || '',
+      tags: tags || [],
+      created_at: new Date().toISOString()
+    };
+
+    pins.push(newPin);
+    await fs.writeJson(DATA_FILE, pins);
+
+    res.json(newPin);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to save pin' });
+  }
 });
 
 app.listen(PORT, () => {
