@@ -33,28 +33,30 @@ app.get('/getPins', async (req, res) => {
 // POST a new pin
 app.post('/addPin', async (req, res) => {
   try {
-    const { lat, lng, note, tags } = req.body;
+    const { lat, lng, note = '', tags = [] } = req.body;
+
     if (lat == null || lng == null) return res.status(400).json({ error: 'lat/lng required' });
 
-    const pins = await fs.readJson(DATA_FILE);
+    const pins = await fs.readJson(DATA_FILE).catch(() => []);
     const newPin = {
       id: Date.now(),
       lat,
       lng,
-      note: note || '',
-      tags: tags || [],
+      note,
+      tags,
       created_at: new Date().toISOString()
     };
 
     pins.push(newPin);
-    await fs.writeJson(DATA_FILE, pins);
+    await fs.writeJson(DATA_FILE, pins, { spaces: 2 }); // spaces for readability
 
     res.json(newPin);
   } catch (err) {
-    console.error(err);
+    console.error("Add pin failed:", err);
     res.status(500).json({ error: 'Failed to save pin' });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
