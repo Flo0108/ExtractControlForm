@@ -34,7 +34,6 @@ app.get('/getPins', async (req, res) => {
 app.post('/addPin', async (req, res) => {
   try {
     const { lat, lng, note = '', tags = [] } = req.body;
-
     if (lat == null || lng == null) return res.status(400).json({ error: 'lat/lng required' });
 
     const pins = await fs.readJson(DATA_FILE).catch(() => []);
@@ -43,12 +42,12 @@ app.post('/addPin', async (req, res) => {
       lat,
       lng,
       note,
-      tags,
+      tags: Array.isArray(tags) ? tags : [],
       created_at: new Date().toISOString()
     };
 
     pins.push(newPin);
-    await fs.writeJson(DATA_FILE, pins, { spaces: 2 }); // spaces for readability
+    await fs.writeJson(DATA_FILE, pins, { spaces: 2 });
 
     res.json(newPin);
   } catch (err) {
@@ -56,7 +55,6 @@ app.post('/addPin', async (req, res) => {
     res.status(500).json({ error: 'Failed to save pin' });
   }
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
