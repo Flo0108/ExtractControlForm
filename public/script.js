@@ -1,5 +1,5 @@
-console.log("Script loaded");
-console.log("firebase object:", window.firebase);
+console.log("SCRIPT.JS LOADED");
+alert("SCRIPT.JS LOADED");
 
 // -------------------- Firebase Setup --------------------
 const firebaseConfig = {
