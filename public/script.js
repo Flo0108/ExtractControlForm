@@ -11,6 +11,18 @@ const firebaseConfig = {
   measurementId: "G-5L4499RY6W"
 };
 
+
+
+const topicColors = {
+  Physical: "#FF5733",      // red-orange
+  Environmental: "#33C1FF", // blue
+  Behavioral: "#33FF57",    // green
+  Atmospheric: "#FF33A8",   // pink
+  Cultural: "#FFC133",      // yellow-orange
+  Temporal: "#8D33FF"       // purple
+};
+
+
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
@@ -107,10 +119,14 @@ map.on('click', async e => {
     });
 
     const pin = { id: docRef.id, lat, lng, note, topic: selectedTopic, tool: selectedTool };
-    L.marker([pin.lat, pin.lng])
-      .addTo(map)
-      .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`)
-      .openPopup();
+    L.circleMarker([pin.lat, pin.lng], {
+      radius: 8,
+      color: topicColors[pin.topic] || "#007aff", // fallback color
+      fillColor: topicColors[pin.topic] || "#2f80ed",
+      fillOpacity: 0.9
+    }).addTo(map)
+      .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
+
   } catch (err) {
     console.error("Failed to save pin:", err);
     alert("Failed to save pin.");
