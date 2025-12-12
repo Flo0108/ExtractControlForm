@@ -39,8 +39,20 @@ const tools = [
   { key: "Volume", description: "Anything extending vertically / occupies depth" }
 ];
 
-// Default tool
-let selectedTool = "Point";
+let selectedTool = "Point"; // default
+
+// -------------------- Sidebar Tool Selection --------------------
+const buttons = document.querySelectorAll("#tool-sidebar button");
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedTool = btn.dataset.tool;
+    console.log("Selected tool:", selectedTool);
+  });
+
+  if (btn.dataset.tool === selectedTool) btn.classList.add("selected");
+});
 
 // -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default
@@ -71,21 +83,6 @@ map.on('locationfound', e => {
 });
 
 map.on('locationerror', e => console.error("Location error:", e.message));
-
-// -------------------- Tool Selection --------------------
-function selectTool() {
-  let toolOptions = tools.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
-  let toolIndex = parseInt(prompt(`Select tool:\n${toolOptions}`)) - 1;
-  if (toolIndex < 0 || toolIndex >= tools.length) {
-    alert("Invalid selection. Defaulting to Point tool.");
-    toolIndex = 0;
-  }
-  selectedTool = tools[toolIndex].key;
-  console.log("Selected tool:", selectedTool);
-}
-
-// Call at start
-selectTool();
 
 // -------------------- Load Pins from Firestore --------------------
 async function loadPins() {
