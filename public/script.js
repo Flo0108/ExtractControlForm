@@ -1,4 +1,4 @@
-console.log("SCRIPT.JS LOADED");
+console.log("Script loaded");
 
 // -------------------- Firebase Setup --------------------
 const firebaseConfig = {
@@ -11,81 +11,102 @@ const firebaseConfig = {
   measurementId: "G-5L4499RY6W"
 };
 
-
-
-const topicColors = {
-  Physical: "#FF5733",      // red-orange
-  Environmental: "#33C1FF", // blue
-  Behavioral: "#33FF57",    // green
-  Atmospheric: "#FF33A8",   // pink
-  Cultural: "#FFC133",      // yellow-orange
-  Temporal: "#8D33FF"       // purple
-};
-
-
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// -------------------- Default selections --------------------
-let selectedTool = "Point";
-let selectedTopic = "Physical";
+// -------------------- Topics & Colors --------------------
+const topics = [
+  { key: "Physical", description: "Materials, geometry, thresholds, edges, textures" },
+  { key: "Environmental", description: "Light, sound, temperature, wind, smell" },
+  { key: "Behavioral", description: "Movements, flows, informal uses, pauses, routines" },
+  { key: "Atmospheric", description: "Vibes, rhythms, social intensity, emotional tone" },
+  { key: "Cultural", description: "Local habits, shared meanings, events, signifiers" },
+  { key: "Temporal", description: "Daily patterns, seasonality, change over time, cycles" }
+];
 
-// -------------------- Tool Sidebar --------------------
-const toolButtons = document.querySelectorAll("#tool-sidebar button");
-toolButtons.forEach(btn => {
+const topicColors = {
+  Physical: "#FF5733",
+  Environmental: "#33C1FF",
+  Behavioral: "#33FF57",
+  Atmospheric: "#FF33A8",
+  Cultural: "#FFC133",
+  Temporal: "#8D33FF"
+};
+
+// -------------------- Tools --------------------
+const tools = ["Point", "Line", "Arrow", "Area", "Volume"];
+let selectedTool = "Point";
+
+// -------------------- Sidebar Tool Selection --------------------
+const buttons = document.querySelectorAll("#tool-sidebar button");
+buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    toolButtons.forEach(b => b.classList.remove("selected"));
+    buttons.forEach(b => b.classList.remove("selected"));
     btn.classList.add("selected");
     selectedTool = btn.dataset.tool;
     console.log("Selected tool:", selectedTool);
+    resetTempGeometry();
   });
   if (btn.dataset.tool === selectedTool) btn.classList.add("selected");
-});
-
-// -------------------- Topic Sidebar --------------------
-const topicButtons = document.querySelectorAll("#topic-sidebar button");
-topicButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    topicButtons.forEach(b => b.classList.remove("selected"));
-    btn.classList.add("selected");
-    selectedTopic = btn.dataset.topic;
-    console.log("Selected topic:", selectedTopic);
-  });
-  if (btn.dataset.topic === selectedTopic) btn.classList.add("selected");
 });
 
 // -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19
+}).addTo(map);
 
 let userMarker = null;
-
 map.locate({ watch: true, enableHighAccuracy: true });
 map.on('locationfound', e => {
-  const lat = e.latitude;
-  const lng = e.longitude;
-
+  const lat = e.latitude, lng = e.longitude;
   if (!userMarker) {
     userMarker = L.circleMarker([lat, lng], { radius: 8, color: "#007aff", fillColor: "#2f80ed", fillOpacity: 0.9 }).addTo(map);
     map.setView([lat, lng], 17);
-  } else {
-    userMarker.setLatLng([lat, lng]);
-  }
+  } else userMarker.setLatLng([lat, lng]);
 });
-
 map.on('locationerror', e => console.error("Location error:", e.message));
 
-// -------------------- Load Pins --------------------
+// -------------------- Temporary storage for multi-point tools --------------------
+let tempPoints = [];
+let tempLayer = null;
+
+function resetTempGeometry() {
+  tempPoints = [];
+  if (tempLayer) {
+    map.removeLayer(tempLayer);
+    tempLayer = null;
+  }
+}
+
+// -------------------- Helper: Select Topic --------------------
+function selectTopic() {
+  const topicOptions = topics.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
+  let topicIndex = parseInt(prompt(`Choose a topic:\n${topicOptions}`)) - 1;
+  if (topicIndex < 0 || topicIndex >= topics.length) topicIndex = 0;
+  return topics[topicIndex].key;
+}
+
+// -------------------- Load Existing Pins --------------------
 async function loadPins() {
-  console.log("Loading pins from Firestore...");
   try {
     const snapshot = await db.collection("pins").get();
     const pins = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     pins.forEach(pin => {
-      L.marker([pin.lat, pin.lng])
-        .addTo(map)
-        .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
+      switch (pin.tool) {
+        case "Point":
+          addMapPoint(pin);
+          break;
+        case "Line":
+        case "Arrow":
+          addMapLine(pin);
+          break;
+        case "Area":
+        case "Volume":
+          addMapPolygon(pin);
+          break;
+      }
     });
   } catch (err) {
     console.error("Failed to load pins:", err);
@@ -93,42 +114,124 @@ async function loadPins() {
 }
 loadPins();
 
-// -------------------- Add Pin on Click --------------------
-map.on('click', async e => {
-  console.log("Map clicked at:", e.latlng);
+// -------------------- Map Additions --------------------
+map.on('click', e => handleMapClick(e.latlng));
 
-  if (selectedTool !== "Point") {
-    alert(`Tool "${selectedTool}" not implemented yet. Only Points can be placed.`);
-    return;
+function handleMapClick(latlng) {
+  switch (selectedTool) {
+    case "Point":
+      addPoint(latlng);
+      break;
+    case "Line":
+    case "Arrow":
+      addLinePoint(latlng);
+      break;
+    case "Area":
+    case "Volume":
+      addPolygonPoint(latlng);
+      break;
   }
+}
 
-  const lat = e.latlng.lat;
-  const lng = e.latlng.lng;
-
+// -------------------- Add Point --------------------
+async function addPoint(latlng) {
   const note = prompt("Enter note for this pin:");
   if (!note) return;
+  const topic = selectTopic();
+  const color = topicColors[topic] || "#007aff";
 
   try {
     const docRef = await db.collection("pins").add({
-      lat,
-      lng,
+      tool: "Point",
+      lat: latlng.lat,
+      lng: latlng.lng,
       note,
-      topic: selectedTopic,
-      tool: selectedTool,
+      topic,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
-
-    const pin = { id: docRef.id, lat, lng, note, topic: selectedTopic, tool: selectedTool };
-    L.circleMarker([pin.lat, pin.lng], {
-      radius: 8,
-      color: topicColors[pin.topic] || "#007aff", // fallback color
-      fillColor: topicColors[pin.topic] || "#2f80ed",
-      fillOpacity: 0.9
-    }).addTo(map)
-      .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
-
+    addMapPoint({ id: docRef.id, lat: latlng.lat, lng: latlng.lng, note, topic, tool: "Point" });
   } catch (err) {
-    console.error("Failed to save pin:", err);
-    alert("Failed to save pin.");
+    console.error("Failed to save point:", err);
   }
-});
+}
+
+function addMapPoint(pin) {
+  L.circleMarker([pin.lat, pin.lng], {
+    radius: 8,
+    color: topicColors[pin.topic] || "#007aff",
+    fillColor: topicColors[pin.topic] || "#2f80ed",
+    fillOpacity: 0.9
+  }).addTo(map).bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
+}
+
+// -------------------- Add Line / Arrow --------------------
+function addLinePoint(latlng) {
+  tempPoints.push([latlng.lat, latlng.lng]);
+  if (tempLayer) map.removeLayer(tempLayer);
+
+  if (tempPoints.length > 1) {
+    tempLayer = L.polyline(tempPoints, { color: "#000", weight: 3 }).addTo(map);
+  }
+  // Finish line on double click
+  map.once('dblclick', async () => {
+    if (tempPoints.length < 2) return resetTempGeometry();
+    const note = prompt("Enter note for this line:");
+    const topic = selectTopic();
+    try {
+      const docRef = await db.collection("pins").add({
+        tool: selectedTool,
+        points: tempPoints,
+        note,
+        topic,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      addMapLine({ id: docRef.id, points: tempPoints, note, topic, tool: selectedTool });
+    } catch (err) {
+      console.error("Failed to save line:", err);
+    }
+    resetTempGeometry();
+  });
+}
+
+function addMapLine(pin) {
+  L.polyline(pin.points, { color: topicColors[pin.topic] || "#000", weight: 3 }).addTo(map)
+    .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
+}
+
+// -------------------- Add Area / Volume --------------------
+function addPolygonPoint(latlng) {
+  tempPoints.push([latlng.lat, latlng.lng]);
+  if (tempLayer) map.removeLayer(tempLayer);
+
+  if (tempPoints.length > 2) {
+    tempLayer = L.polygon(tempPoints, { color: topicColors[selectedTool] || "#000", fillColor: topicColors[selectedTool] || "#000", fillOpacity: 0.3 }).addTo(map);
+  }
+  // Finish polygon on double click
+  map.once('dblclick', async () => {
+    if (tempPoints.length < 3) return resetTempGeometry();
+    const note = prompt("Enter note for this polygon:");
+    const topic = selectTopic();
+    try {
+      const docRef = await db.collection("pins").add({
+        tool: selectedTool,
+        points: tempPoints,
+        note,
+        topic,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      addMapPolygon({ id: docRef.id, points: tempPoints, note, topic, tool: selectedTool });
+    } catch (err) {
+      console.error("Failed to save polygon:", err);
+    }
+    resetTempGeometry();
+  });
+}
+
+function addMapPolygon(pin) {
+  L.polygon(pin.points, {
+    color: topicColors[pin.topic] || "#000",
+    fillColor: topicColors[pin.topic] || "#000",
+    fillOpacity: 0.3
+  }).addTo(map)
+    .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
+}
