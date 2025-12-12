@@ -70,39 +70,81 @@ async function loadPins() {
 
 loadPins();
 
+
+const topics = [
+  { key: "Physical", description: "Materials, geometry, thresholds, edges, textures" },
+  { key: "Environmental", description: "Light, sound, temperature, wind, smell" },
+  { key: "Behavioral", description: "Movements, flows, informal uses, pauses, routines" },
+  { key: "Atmospheric", description: "Vibes, rhythms, social intensity, emotional tone" },
+  { key: "Cultural", description: "Local habits, shared meanings, events, signifiers" },
+  { key: "Temporal", description: "Daily patterns, seasonality, change over time, cycles" }
+];
+
+
 // -------------------- Add Pin on Map Click --------------------
 map.on('click', async e => {
+  if (selectedTool !== "Point") {
+    alert(`Tool "${selectedTool}" not implemented yet. Only Points can be placed.`);
+    return;
+  }
+
   const lat = e.latlng.lat;
   const lng = e.latlng.lng;
 
   const note = prompt("Enter note for this pin:");
   if (!note) return;
 
-  const tagsInput = prompt("Enter tags (comma-separated):");
-  const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
-
-  console.log("Map clicked at:", e.latlng);
-  console.log("Note:", note);
-  console.log("Tags:", tags);
+  // Select topic
+  let topicOptions = topics.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
+  let topicIndex = parseInt(prompt(`Choose a topic:\n${topicOptions}`)) - 1;
+  if (topicIndex < 0 || topicIndex >= topics.length) topicIndex = 0;
+  const selectedTopic = topics[topicIndex].key;
 
   try {
     const docRef = await db.collection("pins").add({
       lat,
       lng,
       note,
-      tags,
+      topic: selectedTopic,
+      tool: selectedTool,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
 
-
-
-    const pin = { id: docRef.id, lat, lng, note, tags };
+    const pin = { id: docRef.id, lat, lng, note, topic: selectedTopic, tool: selectedTool };
     L.marker([pin.lat, pin.lng])
       .addTo(map)
-      .bindPopup(`<b>${pin.note}</b>${pin.tags && pin.tags.length ? '<br>Tags: ' + pin.tags.join(', ') : ''}`)
+      .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`)
       .openPopup();
   } catch (err) {
     console.error("Failed to save pin:", err);
     alert("Failed to save pin.");
   }
 });
+
+
+
+
+const tools = [
+  { key: "Point", description: "Events, hotspots, singularities" },
+  { key: "Line", description: "Flows, edges, movements, boundaries" },
+  { key: "Arrow", description: "Directional forces" },
+  { key: "Area", description: "Zones, fields, atmospheres" },
+  { key: "Volume", description: "Anything extending vertically / occupies depth" }
+];
+
+// Default tool
+let selectedTool = "Point";
+
+function selectTool() {
+  let toolOptions = tools.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
+  let toolIndex = parseInt(prompt(`Select tool:\n${toolOptions}`)) - 1;
+  if (toolIndex < 0 || toolIndex >= tools.length) {
+    alert("Invalid selection. Defaulting to Point tool.");
+    toolIndex = 0;
+  }
+  selectedTool = tools[toolIndex].key;
+  console.log("Selected tool:", selectedTool);
+}
+
+// Call once at start
+selectTool();
