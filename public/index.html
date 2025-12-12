@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Leaflet Pins with Firebase</title>
+<title>Situated Mapping</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   html, body { height: 100%; margin: 0; }
   #map { width: 100%; height: 100%; }
 
-  /* Sidebar */
+  /* Tool Sidebar (Left) */
   #tool-sidebar {
     position: absolute;
     top: 50px;
@@ -35,6 +35,7 @@
     border-color: #2f80ed;
   }
 
+  /* Topic Sidebar (Right) */
   #topic-sidebar {
     position: absolute;
     top: 50px;
@@ -47,7 +48,6 @@
     padding: 10px;
     border-radius: 8px;
   }
-
   #topic-sidebar button {
     cursor: pointer;
     padding: 8px 12px;
@@ -56,19 +56,16 @@
     border-radius: 4px;
     font-size: 14px;
   }
-
   #topic-sidebar button.selected {
     background: #2f80ed;
     color: white;
     border-color: #2f80ed;
   }
-
-
 </style>
 </head>
 <body>
 
-<!-- Sidebar Tool Selector -->
+<!-- Tool Sidebar -->
 <div id="tool-sidebar">
   <button data-tool="Point">📍 Point</button>
   <button data-tool="Line">📏 Line</button>
@@ -86,7 +83,6 @@
   <button data-topic="Cultural">Cultural</button>
   <button data-topic="Temporal">Temporal</button>
 </div>
-
 
 <!-- Map Container -->
 <div id="map"></div>

@@ -1,5 +1,4 @@
 console.log("SCRIPT.JS LOADED");
-alert("SCRIPT.JS LOADED");
 
 // -------------------- Firebase Setup --------------------
 const firebaseConfig = {
@@ -12,54 +11,26 @@ const firebaseConfig = {
   measurementId: "G-5L4499RY6W"
 };
 
-
-console.log("Initializing Firebase...");
 const app = firebase.initializeApp(firebaseConfig);
-console.log("Firebase app:", app);
-
 const db = firebase.firestore();
-console.log("Firestore db object:", db);
 
-// -------------------- Topics --------------------
-const topics = [
-  { key: "Physical", description: "Materials, geometry, thresholds, edges, textures" },
-  { key: "Environmental", description: "Light, sound, temperature, wind, smell" },
-  { key: "Behavioral", description: "Movements, flows, informal uses, pauses, routines" },
-  { key: "Atmospheric", description: "Vibes, rhythms, social intensity, emotional tone" },
-  { key: "Cultural", description: "Local habits, shared meanings, events, signifiers" },
-  { key: "Temporal", description: "Daily patterns, seasonality, change over time, cycles" }
-];
+// -------------------- Default selections --------------------
+let selectedTool = "Point";
+let selectedTopic = "Physical";
 
-// -------------------- Tools --------------------
-const tools = [
-  { key: "Point", description: "Events, hotspots, singularities" },
-  { key: "Line", description: "Flows, edges, movements, boundaries" },
-  { key: "Arrow", description: "Directional forces" },
-  { key: "Area", description: "Zones, fields, atmospheres" },
-  { key: "Volume", description: "Anything extending vertically / occupies depth" }
-];
-
-
-
-let selectedTool = "Point"; // default
-
-// -------------------- Sidebar Tool Selection --------------------
-const buttons = document.querySelectorAll("#tool-sidebar button");
-buttons.forEach(btn => {
+// -------------------- Tool Sidebar --------------------
+const toolButtons = document.querySelectorAll("#tool-sidebar button");
+toolButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("selected"));
+    toolButtons.forEach(b => b.classList.remove("selected"));
     btn.classList.add("selected");
     selectedTool = btn.dataset.tool;
     console.log("Selected tool:", selectedTool);
   });
-
   if (btn.dataset.tool === selectedTool) btn.classList.add("selected");
 });
 
-
-
-let selectedTopic = "Physical"; // default
-
+// -------------------- Topic Sidebar --------------------
 const topicButtons = document.querySelectorAll("#topic-sidebar button");
 topicButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -68,35 +39,23 @@ topicButtons.forEach(btn => {
     selectedTopic = btn.dataset.topic;
     console.log("Selected topic:", selectedTopic);
   });
-
   if (btn.dataset.topic === selectedTopic) btn.classList.add("selected");
 });
 
-
-
-
 // -------------------- Map Setup --------------------
-const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default
+const map = L.map('map').setView([48.2082, 16.3738], 16);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19
-}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
 
 let userMarker = null;
 
-// Watch live location
 map.locate({ watch: true, enableHighAccuracy: true });
 map.on('locationfound', e => {
   const lat = e.latitude;
   const lng = e.longitude;
 
   if (!userMarker) {
-    userMarker = L.circleMarker([lat, lng], {
-      radius: 8,
-      color: "#007aff",
-      fillColor: "#2f80ed",
-      fillOpacity: 0.9
-    }).addTo(map);
+    userMarker = L.circleMarker([lat, lng], { radius: 8, color: "#007aff", fillColor: "#2f80ed", fillOpacity: 0.9 }).addTo(map);
     map.setView([lat, lng], 17);
   } else {
     userMarker.setLatLng([lat, lng]);
@@ -105,14 +64,12 @@ map.on('locationfound', e => {
 
 map.on('locationerror', e => console.error("Location error:", e.message));
 
-// -------------------- Load Pins from Firestore --------------------
+// -------------------- Load Pins --------------------
 async function loadPins() {
   console.log("Loading pins from Firestore...");
   try {
     const snapshot = await db.collection("pins").get();
     const pins = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    console.log("Pins loaded:", pins);
-
     pins.forEach(pin => {
       L.marker([pin.lat, pin.lng])
         .addTo(map)
@@ -124,7 +81,7 @@ async function loadPins() {
 }
 loadPins();
 
-// -------------------- Add Pin on Map Click --------------------
+// -------------------- Add Pin on Click --------------------
 map.on('click', async e => {
   console.log("Map clicked at:", e.latlng);
 
@@ -139,12 +96,6 @@ map.on('click', async e => {
   const note = prompt("Enter note for this pin:");
   if (!note) return;
 
-  // Select topic
-  let topicOptions = topics.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
-  let topicIndex = parseInt(prompt(`Choose a topic:\n${topicOptions}`)) - 1;
-  if (topicIndex < 0 || topicIndex >= topics.length) topicIndex = 0;
-  const selectedTopic = topics[topicIndex].key;
-
   try {
     const docRef = await db.collection("pins").add({
       lat,
@@ -154,8 +105,6 @@ map.on('click', async e => {
       tool: selectedTool,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
-
-    console.log("Pin added to Firestore:", docRef.id);
 
     const pin = { id: docRef.id, lat, lng, note, topic: selectedTopic, tool: selectedTool };
     L.marker([pin.lat, pin.lng])
