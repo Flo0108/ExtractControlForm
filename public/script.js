@@ -1,3 +1,6 @@
+console.log("Script loaded");
+console.log("firebase object:", window.firebase);
+
 // -------------------- Firebase Setup --------------------
 const firebaseConfig = {
   apiKey: "AIzaSyAOvze18XlGJh0XWx1_FqyFMDyCiTinPoQ",
@@ -10,7 +13,10 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
+console.log("Firebase app initialized:", app);
+
 const db = firebase.firestore();
+console.log("Firestore db object:", db);
 
 // -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default
@@ -44,9 +50,13 @@ map.on('locationerror', e => console.error("Location error:", e.message));
 
 // -------------------- Load Pins from Firestore --------------------
 async function loadPins() {
+  console.log("Loading pins from Firestore...");
   try {
     const snapshot = await db.collection("pins").get();
+    console.log("Firestore snapshot:", snapshot);
+
     const pins = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    console.log("Pins loaded:", pins);
 
     pins.forEach(pin => {
       L.marker([pin.lat, pin.lng])
@@ -57,6 +67,7 @@ async function loadPins() {
     console.error("Failed to load pins:", err);
   }
 }
+
 loadPins();
 
 // -------------------- Add Pin on Map Click --------------------
@@ -70,6 +81,10 @@ map.on('click', async e => {
   const tagsInput = prompt("Enter tags (comma-separated):");
   const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
 
+  console.log("Map clicked at:", e.latlng);
+  console.log("Note:", note);
+  console.log("Tags:", tags);
+
   try {
     const docRef = await db.collection("pins").add({
       lat,
@@ -78,6 +93,8 @@ map.on('click', async e => {
       tags,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
+
+
 
     const pin = { id: docRef.id, lat, lng, note, tags };
     L.marker([pin.lat, pin.lng])
