@@ -1,11 +1,12 @@
 // -------------------- Firebase Setup --------------------
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAOvze18XlGJh0XWx1_FqyFMDyCiTinPoQ",
+  authDomain: "situated-mapping.firebaseapp.com",
+  projectId: "situated-mapping",
+  storageBucket: "situated-mapping.firebasestorage.app",
+  messagingSenderId: "567912218624",
+  appId: "1:567912218624:web:dfe05320f61986ff7398e5",
+  measurementId: "G-5L4499RY6W"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
