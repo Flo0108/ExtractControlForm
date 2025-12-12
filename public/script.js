@@ -1,4 +1,17 @@
-// Initialize map
+// -------------------- Firebase Setup --------------------
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -28,11 +41,12 @@ map.on('locationfound', e => {
 
 map.on('locationerror', e => console.error("Location error:", e.message));
 
-// Load all saved pins
+// -------------------- Load Pins from Firestore --------------------
 async function loadPins() {
   try {
-    const res = await fetch('/getPins');
-    const pins = await res.json();
+    const snapshot = await db.collection("pins").get();
+    const pins = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
     pins.forEach(pin => {
       L.marker([pin.lat, pin.lng])
         .addTo(map)
@@ -44,7 +58,7 @@ async function loadPins() {
 }
 loadPins();
 
-// Drop a new pin
+// -------------------- Add Pin on Map Click --------------------
 map.on('click', async e => {
   const lat = e.latlng.lat;
   const lng = e.latlng.lng;
@@ -56,13 +70,15 @@ map.on('click', async e => {
   const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
 
   try {
-    const res = await fetch('/addPin', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ lat, lng, note, tags })
+    const docRef = await db.collection("pins").add({
+      lat,
+      lng,
+      note,
+      tags,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
-    const pin = await res.json();
 
+    const pin = { id: docRef.id, lat, lng, note, tags };
     L.marker([pin.lat, pin.lng])
       .addTo(map)
       .bindPopup(`<b>${pin.note}</b>${pin.tags && pin.tags.length ? '<br>Tags: ' + pin.tags.join(', ') : ''}`)
