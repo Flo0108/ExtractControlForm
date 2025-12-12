@@ -12,11 +12,35 @@ const firebaseConfig = {
   measurementId: "G-5L4499RY6W"
 };
 
+
+console.log("Initializing Firebase...");
 const app = firebase.initializeApp(firebaseConfig);
-console.log("Firebase app initialized:", app);
+console.log("Firebase app:", app);
 
 const db = firebase.firestore();
 console.log("Firestore db object:", db);
+
+// -------------------- Topics --------------------
+const topics = [
+  { key: "Physical", description: "Materials, geometry, thresholds, edges, textures" },
+  { key: "Environmental", description: "Light, sound, temperature, wind, smell" },
+  { key: "Behavioral", description: "Movements, flows, informal uses, pauses, routines" },
+  { key: "Atmospheric", description: "Vibes, rhythms, social intensity, emotional tone" },
+  { key: "Cultural", description: "Local habits, shared meanings, events, signifiers" },
+  { key: "Temporal", description: "Daily patterns, seasonality, change over time, cycles" }
+];
+
+// -------------------- Tools --------------------
+const tools = [
+  { key: "Point", description: "Events, hotspots, singularities" },
+  { key: "Line", description: "Flows, edges, movements, boundaries" },
+  { key: "Arrow", description: "Directional forces" },
+  { key: "Area", description: "Zones, fields, atmospheres" },
+  { key: "Volume", description: "Anything extending vertically / occupies depth" }
+];
+
+// Default tool
+let selectedTool = "Point";
 
 // -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default
@@ -48,41 +72,44 @@ map.on('locationfound', e => {
 
 map.on('locationerror', e => console.error("Location error:", e.message));
 
+// -------------------- Tool Selection --------------------
+function selectTool() {
+  let toolOptions = tools.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
+  let toolIndex = parseInt(prompt(`Select tool:\n${toolOptions}`)) - 1;
+  if (toolIndex < 0 || toolIndex >= tools.length) {
+    alert("Invalid selection. Defaulting to Point tool.");
+    toolIndex = 0;
+  }
+  selectedTool = tools[toolIndex].key;
+  console.log("Selected tool:", selectedTool);
+}
+
+// Call at start
+selectTool();
+
 // -------------------- Load Pins from Firestore --------------------
 async function loadPins() {
   console.log("Loading pins from Firestore...");
   try {
     const snapshot = await db.collection("pins").get();
-    console.log("Firestore snapshot:", snapshot);
-
     const pins = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     console.log("Pins loaded:", pins);
 
     pins.forEach(pin => {
       L.marker([pin.lat, pin.lng])
         .addTo(map)
-        .bindPopup(`<b>${pin.note}</b>${pin.tags && pin.tags.length ? '<br>Tags: ' + pin.tags.join(', ') : ''}`);
+        .bindPopup(`<b>${pin.note}</b><br>Topic: ${pin.topic}<br>Tool: ${pin.tool}`);
     });
   } catch (err) {
     console.error("Failed to load pins:", err);
   }
 }
-
 loadPins();
-
-
-const topics = [
-  { key: "Physical", description: "Materials, geometry, thresholds, edges, textures" },
-  { key: "Environmental", description: "Light, sound, temperature, wind, smell" },
-  { key: "Behavioral", description: "Movements, flows, informal uses, pauses, routines" },
-  { key: "Atmospheric", description: "Vibes, rhythms, social intensity, emotional tone" },
-  { key: "Cultural", description: "Local habits, shared meanings, events, signifiers" },
-  { key: "Temporal", description: "Daily patterns, seasonality, change over time, cycles" }
-];
-
 
 // -------------------- Add Pin on Map Click --------------------
 map.on('click', async e => {
+  console.log("Map clicked at:", e.latlng);
+
   if (selectedTool !== "Point") {
     alert(`Tool "${selectedTool}" not implemented yet. Only Points can be placed.`);
     return;
@@ -110,6 +137,8 @@ map.on('click', async e => {
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
 
+    console.log("Pin added to Firestore:", docRef.id);
+
     const pin = { id: docRef.id, lat, lng, note, topic: selectedTopic, tool: selectedTool };
     L.marker([pin.lat, pin.lng])
       .addTo(map)
@@ -120,31 +149,3 @@ map.on('click', async e => {
     alert("Failed to save pin.");
   }
 });
-
-
-
-
-const tools = [
-  { key: "Point", description: "Events, hotspots, singularities" },
-  { key: "Line", description: "Flows, edges, movements, boundaries" },
-  { key: "Arrow", description: "Directional forces" },
-  { key: "Area", description: "Zones, fields, atmospheres" },
-  { key: "Volume", description: "Anything extending vertically / occupies depth" }
-];
-
-// Default tool
-let selectedTool = "Point";
-
-function selectTool() {
-  let toolOptions = tools.map((t, i) => `${i + 1}: ${t.key}`).join("\n");
-  let toolIndex = parseInt(prompt(`Select tool:\n${toolOptions}`)) - 1;
-  if (toolIndex < 0 || toolIndex >= tools.length) {
-    alert("Invalid selection. Defaulting to Point tool.");
-    toolIndex = 0;
-  }
-  selectedTool = tools[toolIndex].key;
-  console.log("Selected tool:", selectedTool);
-}
-
-// Call once at start
-selectTool();
