@@ -39,6 +39,8 @@ const tools = [
   { key: "Volume", description: "Anything extending vertically / occupies depth" }
 ];
 
+
+
 let selectedTool = "Point"; // default
 
 // -------------------- Sidebar Tool Selection --------------------
@@ -53,6 +55,25 @@ buttons.forEach(btn => {
 
   if (btn.dataset.tool === selectedTool) btn.classList.add("selected");
 });
+
+
+
+let selectedTopic = "Physical"; // default
+
+const topicButtons = document.querySelectorAll("#topic-sidebar button");
+topicButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    topicButtons.forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedTopic = btn.dataset.topic;
+    console.log("Selected topic:", selectedTopic);
+  });
+
+  if (btn.dataset.topic === selectedTopic) btn.classList.add("selected");
+});
+
+
+
 
 // -------------------- Map Setup --------------------
 const map = L.map('map').setView([48.2082, 16.3738], 16); // Vienna default

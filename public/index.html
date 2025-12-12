@@ -34,6 +34,36 @@
     color: white;
     border-color: #2f80ed;
   }
+
+  #topic-sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  #topic-sidebar button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  #topic-sidebar button.selected {
+    background: #2f80ed;
+    color: white;
+    border-color: #2f80ed;
+  }
+
+
 </style>
 </head>
 <body>
@@ -46,6 +76,17 @@
   <button data-tool="Area">⬛ Area</button>
   <button data-tool="Volume">🟫 Volume</button>
 </div>
+
+<!-- Topic Sidebar -->
+<div id="topic-sidebar">
+  <button data-topic="Physical">Physical</button>
+  <button data-topic="Environmental">Environmental</button>
+  <button data-topic="Behavioral">Behavioral</button>
+  <button data-topic="Atmospheric">Atmospheric</button>
+  <button data-topic="Cultural">Cultural</button>
+  <button data-topic="Temporal">Temporal</button>
+</div>
+
 
 <!-- Map Container -->
 <div id="map"></div>
