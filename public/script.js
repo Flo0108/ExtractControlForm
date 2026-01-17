@@ -1,6 +1,11 @@
 console.log("SCRIPT.JS LOADED");
 
 // -------------------- Firebase Setup --------------------
+// -- Firebase App (v9 modular) --
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.31.0/firebase-app.js";
+import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.31.0/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAOvze18XlGJh0XWx1_FqyFMDyCiTinPoQ",
   authDomain: "situated-mapping.firebaseapp.com",
@@ -11,8 +16,9 @@ const firebaseConfig = {
   measurementId: "G-5L4499RY6W"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+</script>
 
 
 
@@ -184,8 +190,6 @@ loadImages();
 
 
 
-
-
 // -------------------- Screen-Fixed Adaptive Grid with Opacity --------------------
 screenGridLayer = L.layerGroup([], { pane: "gridPane" }).addTo(map);
 
@@ -334,7 +338,10 @@ async function handlePoint(latlng) {
     createdAt: firebase.firestore.FieldValue.serverTimestamp()
   };
 
-  await db.collection("pins").add(data);
+  await addDoc(collection(db, "pins"), {
+    ...data,
+    createdAt: serverTimestamp()
+  });
 
   drawPoint(data);
 }
@@ -407,7 +414,10 @@ async function handleLineLike(latlng) {
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     };
 
-    await db.collection("pins").add(data);
+    await addDoc(collection(db, "pins"), {
+      ...data,
+      createdAt: serverTimestamp()
+    });
     drawLineLike(data);
     resetTemp();
   }
@@ -438,16 +448,23 @@ function resetTemp() {
 }
 
 // -------------------- Load Existing Data --------------------
-async function loadPins() {
-  const snapshot = await db.collection("pins").get();
-  snapshot.docs.forEach(doc => {
+const snapshot = await getDocs(collection(db, "pins"));
+snapshot.forEach(doc => {
+  const pin = doc.data();
+  if (pin.type === "Point") drawPoint(pin);
+  if (pin.type === "Line" || pin.type === "Arrow") drawLineLike(pin);
+});
+
+import { onSnapshot } from "https://www.gstatic.com/firebasejs/9.31.0/firebase-firestore.js";
+
+onSnapshot(collection(db, "pins"), snapshot => {
+  imageLayerGroup.clearLayers(); // optional
+  snapshot.forEach(doc => {
     const pin = doc.data();
     if (pin.type === "Point") drawPoint(pin);
     if (pin.type === "Line" || pin.type === "Arrow") drawLineLike(pin);
   });
-}
-
-loadPins();
+});
 
 
 
