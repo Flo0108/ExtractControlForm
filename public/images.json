@@ -1,0 +1,3706 @@
+{
+    "20251213_133354": {
+        "image_file": "20251213_133354.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.200268,
+                "lon": 16.3945812
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 13:33:54"
+        }
+    },
+    "20251213_133407": {
+        "image_file": "20251213_133407.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2001391,
+                "lon": 16.3944757
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 13:34:07"
+        }
+    },
+    "20251213_133419": {
+        "image_file": "20251213_133419.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.200046899722224,
+                "lon": 16.394302499722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 13:34:19"
+        }
+    },
+    "20251213_135004": {
+        "image_file": "20251213_135004.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19791779972222,
+                "lon": 16.391292499722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 13:50:04"
+        }
+    },
+    "20251213_140214": {
+        "image_file": "20251213_140214.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198036599999995,
+                "lon": 16.3912145
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:02:14"
+        }
+    },
+    "20251213_140225_001": {
+        "image_file": "20251213_140225_001.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198049999999995,
+                "lon": 16.391190972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:02:26"
+        }
+    },
+    "20251213_140249": {
+        "image_file": "20251213_140249.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19808739972222,
+                "lon": 16.391160899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:02:49"
+        }
+    },
+    "20251213_140315": {
+        "image_file": "20251213_140315.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19829029972222,
+                "lon": 16.391054699999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:03:16"
+        }
+    },
+    "20251213_140351": {
+        "image_file": "20251213_140351.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198574099999995,
+                "lon": 16.3908953
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:03:51"
+        }
+    },
+    "20251213_140359": {
+        "image_file": "20251213_140359.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19859879972222,
+                "lon": 16.3908205
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:04:00"
+        }
+    },
+    "20251213_140401": {
+        "image_file": "20251213_140401.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19859329972222,
+                "lon": 16.3908224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:04:01"
+        }
+    },
+    "20251213_140417": {
+        "image_file": "20251213_140417.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198647599999994,
+                "lon": 16.3907208
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:04:17"
+        }
+    },
+    "20251213_140502": {
+        "image_file": "20251213_140502.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19883359999999,
+                "lon": 16.3902949
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:05:02"
+        }
+    },
+    "20251213_140523": {
+        "image_file": "20251213_140523.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19889229972222,
+                "lon": 16.390689099722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:05:24"
+        }
+    },
+    "20251213_140537": {
+        "image_file": "20251213_140537.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198929799999995,
+                "lon": 16.390888999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:05:37"
+        }
+    },
+    "20251213_140610": {
+        "image_file": "20251213_140610.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19894959972222,
+                "lon": 16.391256299722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:06:10"
+        }
+    },
+    "20251213_140701": {
+        "image_file": "20251213_140701.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198780799999994,
+                "lon": 16.391936
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:07:01"
+        }
+    },
+    "20251213_140706": {
+        "image_file": "20251213_140706.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198774199999995,
+                "lon": 16.391976499722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:07:07"
+        }
+    },
+    "20251213_140725": {
+        "image_file": "20251213_140725.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198807599999995,
+                "lon": 16.392205099999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:07:25"
+        }
+    },
+    "20251213_140811": {
+        "image_file": "20251213_140811.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.199038099999996,
+                "lon": 16.392483899722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:08:11"
+        }
+    },
+    "20251213_140923": {
+        "image_file": "20251213_140923.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19875809972222,
+                "lon": 16.392310599722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:09:24"
+        }
+    },
+    "20251213_141025": {
+        "image_file": "20251213_141025.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19816329972222,
+                "lon": 16.3925771
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:10:26"
+        }
+    },
+    "20251213_141132": {
+        "image_file": "20251213_141132.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.197808499999994,
+                "lon": 16.39220099972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:11:32"
+        }
+    },
+    "20251213_141204": {
+        "image_file": "20251213_141204.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.197772099999995,
+                "lon": 16.39227789972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:12:04"
+        }
+    },
+    "20251213_141256": {
+        "image_file": "20251213_141256.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.197742999999996,
+                "lon": 16.391739
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:12:57"
+        }
+    },
+    "20251213_141320": {
+        "image_file": "20251213_141320.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19776159972222,
+                "lon": 16.391640899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:13:20"
+        }
+    },
+    "20251213_141328": {
+        "image_file": "20251213_141328.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19780909999999,
+                "lon": 16.391654899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:13:29"
+        }
+    },
+    "20251213_141343": {
+        "image_file": "20251213_141343.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19796819972222,
+                "lon": 16.391708
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:13:43"
+        }
+    },
+    "20251213_141444": {
+        "image_file": "20251213_141444.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.198120599999996,
+                "lon": 16.392565399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:14:44"
+        }
+    },
+    "20251213_141506": {
+        "image_file": "20251213_141506.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19812499972222,
+                "lon": 16.392506099722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:15:06"
+        }
+    },
+    "20251213_141610": {
+        "image_file": "20251213_141610.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19837429972222,
+                "lon": 16.39351949972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:16:10"
+        }
+    },
+    "20251213_141614": {
+        "image_file": "20251213_141614.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19838279972222,
+                "lon": 16.393458299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:16:14"
+        }
+    },
+    "20251213_141748": {
+        "image_file": "20251213_141748.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.199318999999996,
+                "lon": 16.393329972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:17:49"
+        }
+    },
+    "20251213_141753": {
+        "image_file": "20251213_141753.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19932397222222,
+                "lon": 16.39336
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:17:54"
+        }
+    },
+    "20251213_141831": {
+        "image_file": "20251213_141831.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.199503799999995,
+                "lon": 16.393752799999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:18:31"
+        }
+    },
+    "20251213_141834": {
+        "image_file": "20251213_141834.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.199519099999996,
+                "lon": 16.393765099722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:18:34"
+        }
+    },
+    "20251213_141939": {
+        "image_file": "20251213_141939.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19987609972222,
+                "lon": 16.394472099999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:19:39"
+        }
+    },
+    "20251213_142004": {
+        "image_file": "20251213_142004.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2000947,
+                "lon": 16.394593199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:20:04"
+        }
+    },
+    "20251213_142024": {
+        "image_file": "20251213_142024.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2002072,
+                "lon": 16.3947861
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:20:25"
+        }
+    },
+    "20251213_142046": {
+        "image_file": "20251213_142046.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.200344,
+                "lon": 16.394725972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:20:47"
+        }
+    },
+    "20251213_142052": {
+        "image_file": "20251213_142052.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.200344,
+                "lon": 16.394729972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:20:53"
+        }
+    },
+    "20251213_142128": {
+        "image_file": "20251213_142128.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.200646599722226,
+                "lon": 16.3949676
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:21:28"
+        }
+    },
+    "20251213_142152": {
+        "image_file": "20251213_142152.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2008583,
+                "lon": 16.395233099722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:21:52"
+        }
+    },
+    "20251213_142210": {
+        "image_file": "20251213_142210.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2009538,
+                "lon": 16.395362599722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:22:10"
+        }
+    },
+    "20251213_142250": {
+        "image_file": "20251213_142250.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2012767,
+                "lon": 16.39583909972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:22:50"
+        }
+    },
+    "20251213_142312": {
+        "image_file": "20251213_142312.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2013776,
+                "lon": 16.39589289972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:23:12"
+        }
+    },
+    "20251213_142354": {
+        "image_file": "20251213_142354.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2016502,
+                "lon": 16.396083099722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:23:55"
+        }
+    },
+    "20251213_142409": {
+        "image_file": "20251213_142409.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2017698,
+                "lon": 16.396107099722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:24:09"
+        }
+    },
+    "20251213_142446": {
+        "image_file": "20251213_142446.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2020726,
+                "lon": 16.395797699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:24:46"
+        }
+    },
+    "20251213_142501": {
+        "image_file": "20251213_142501.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.202224399722226,
+                "lon": 16.395608499999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:25:01"
+        }
+    },
+    "20251213_142555": {
+        "image_file": "20251213_142555.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2024072,
+                "lon": 16.395229699999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:25:55"
+        }
+    },
+    "20251213_142619": {
+        "image_file": "20251213_142619.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.202454,
+                "lon": 16.39497449972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:26:19"
+        }
+    },
+    "20251213_142711": {
+        "image_file": "20251213_142711.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.202572,
+                "lon": 16.3941619
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:27:12"
+        }
+    },
+    "20251213_142823": {
+        "image_file": "20251213_142823.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.203129099722226,
+                "lon": 16.394309799722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:28:23"
+        }
+    },
+    "20251213_142842": {
+        "image_file": "20251213_142842.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.203207499722225,
+                "lon": 16.394406199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:28:42"
+        }
+    },
+    "20251213_142912": {
+        "image_file": "20251213_142912.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.203274299722224,
+                "lon": 16.394601699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:29:13"
+        }
+    },
+    "20251213_143036": {
+        "image_file": "20251213_143036.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2039473,
+                "lon": 16.394045399722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:30:36"
+        }
+    },
+    "20251213_143052": {
+        "image_file": "20251213_143052.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204149999722226,
+                "lon": 16.39383869972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:30:52"
+        }
+    },
+    "20251213_143123": {
+        "image_file": "20251213_143123.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.20427169972223,
+                "lon": 16.39350729972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:31:23"
+        }
+    },
+    "20251213_143147": {
+        "image_file": "20251213_143147.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204371,
+                "lon": 16.393311399999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:31:47"
+        }
+    },
+    "20251213_143219": {
+        "image_file": "20251213_143219.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204610799722225,
+                "lon": 16.3930657
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:32:19"
+        }
+    },
+    "20251213_143220": {
+        "image_file": "20251213_143220.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2046192,
+                "lon": 16.393072499722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:32:20"
+        }
+    },
+    "20251213_143236": {
+        "image_file": "20251213_143236.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204731899722226,
+                "lon": 16.392822599722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:32:36"
+        }
+    },
+    "20251213_143321": {
+        "image_file": "20251213_143321.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204495972222226,
+                "lon": 16.392343999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:33:22"
+        }
+    },
+    "20251213_143337": {
+        "image_file": "20251213_143337.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2045326,
+                "lon": 16.39235509972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:33:37"
+        }
+    },
+    "20251213_143341": {
+        "image_file": "20251213_143341.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.204530499722225,
+                "lon": 16.392357199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:33:42"
+        }
+    },
+    "20251213_143437": {
+        "image_file": "20251213_143437.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2041021,
+                "lon": 16.391986299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:34:37"
+        }
+    },
+    "20251213_143521": {
+        "image_file": "20251213_143521.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.203927,
+                "lon": 16.392064972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:35:22"
+        }
+    },
+    "20251213_143643": {
+        "image_file": "20251213_143643.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.203321,
+                "lon": 16.392637999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:36:47"
+        }
+    },
+    "20251213_143650": {
+        "image_file": "20251213_143650.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2033191,
+                "lon": 16.3923628
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:36:50"
+        }
+    },
+    "20251213_143856": {
+        "image_file": "20251213_143856.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.202391499722225,
+                "lon": 16.3910215
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:38:56"
+        }
+    },
+    "20251213_144135": {
+        "image_file": "20251213_144135.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2022264,
+                "lon": 16.392221899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:41:35"
+        }
+    },
+    "20251213_144149": {
+        "image_file": "20251213_144149.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2021656,
+                "lon": 16.392282699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:41:49"
+        }
+    },
+    "20251213_144225": {
+        "image_file": "20251213_144225.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.201925,
+                "lon": 16.392464999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:42:26"
+        }
+    },
+    "20251213_144243": {
+        "image_file": "20251213_144243.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.202022972222224,
+                "lon": 16.392544972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:42:44"
+        }
+    },
+    "20251213_144309": {
+        "image_file": "20251213_144309.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.201901999722224,
+                "lon": 16.392866899999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:43:09"
+        }
+    },
+    "20251213_144435": {
+        "image_file": "20251213_144435.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2011715,
+                "lon": 16.393721799999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:44:36"
+        }
+    },
+    "20251213_144445": {
+        "image_file": "20251213_144445.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.201233199722225,
+                "lon": 16.3937235
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:44:45"
+        }
+    },
+    "20251213_144605": {
+        "image_file": "20251213_144605.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:13 14:46:05"
+        }
+    },
+    "20251212_160119": {
+        "image_file": "20251212_160119.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19066097222222,
+                "lon": 16.353145972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:01:21"
+        }
+    },
+    "20251212_160123": {
+        "image_file": "20251212_160123.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190680099999994,
+                "lon": 16.353177299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:01:24"
+        }
+    },
+    "20251212_160127": {
+        "image_file": "20251212_160127.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19068819972222,
+                "lon": 16.3531775
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:01:27"
+        }
+    },
+    "20251212_160454": {
+        "image_file": "20251212_160454.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19047379972222,
+                "lon": 16.3529294
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:04:54"
+        }
+    },
+    "20251212_160456": {
+        "image_file": "20251212_160456.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19046109999999,
+                "lon": 16.3529389
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:04:56"
+        }
+    },
+    "20251212_160520": {
+        "image_file": "20251212_160520.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190303799999995,
+                "lon": 16.352737799722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:05:20"
+        }
+    },
+    "20251212_160522": {
+        "image_file": "20251212_160522.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19030699972222,
+                "lon": 16.3527555
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:05:22"
+        }
+    },
+    "20251212_160544": {
+        "image_file": "20251212_160544.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190384599999994,
+                "lon": 16.3527531
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:05:44"
+        }
+    },
+    "20251212_160547": {
+        "image_file": "20251212_160547.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190383999999995,
+                "lon": 16.352733
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:05:48"
+        }
+    },
+    "20251212_160554": {
+        "image_file": "20251212_160554.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19036859972222,
+                "lon": 16.3527433
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:05:55"
+        }
+    },
+    "20251212_160619": {
+        "image_file": "20251212_160619.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19039897222222,
+                "lon": 16.352914972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:06:20"
+        }
+    },
+    "20251212_163221": {
+        "image_file": "20251212_163221.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190341999999994,
+                "lon": 16.352883972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:32:24"
+        }
+    },
+    "20251212_163337": {
+        "image_file": "20251212_163337.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190352999999995,
+                "lon": 16.352876972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:33:40"
+        }
+    },
+    "20251212_163539": {
+        "image_file": "20251212_163539.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19079397222222,
+                "lon": 16.353422972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:35:43"
+        }
+    },
+    "20251212_163554": {
+        "image_file": "20251212_163554.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190847999999995,
+                "lon": 16.353449
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:35:57"
+        }
+    },
+    "20251212_163801": {
+        "image_file": "20251212_163801.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190993999999996,
+                "lon": 16.353818
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:38:10"
+        }
+    },
+    "20251212_163818": {
+        "image_file": "20251212_163818.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19113997222222,
+                "lon": 16.353778972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:38:19"
+        }
+    },
+    "20251212_163952": {
+        "image_file": "20251212_163952.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19117097222222,
+                "lon": 16.353729972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:39:53"
+        }
+    },
+    "20251212_164448": {
+        "image_file": "20251212_164448.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190488599999995,
+                "lon": 16.3545325
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:44:48"
+        }
+    },
+    "20251212_164627": {
+        "image_file": "20251212_164627.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190354299999996,
+                "lon": 16.3550098
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:46:28"
+        }
+    },
+    "20251212_164640": {
+        "image_file": "20251212_164640.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190374799999994,
+                "lon": 16.3550356
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:46:40"
+        }
+    },
+    "20251212_164915": {
+        "image_file": "20251212_164915.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18976239972222,
+                "lon": 16.354919599722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:49:16"
+        }
+    },
+    "20251212_164937": {
+        "image_file": "20251212_164937.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.189788199999995,
+                "lon": 16.3548523
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:49:37"
+        }
+    },
+    "20251212_165417_001": {
+        "image_file": "20251212_165417_001.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.189617999999996,
+                "lon": 16.354368972222225
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:54:18"
+        }
+    },
+    "20251212_165624": {
+        "image_file": "20251212_165624.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.189343799999996,
+                "lon": 16.354869399722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:56:24"
+        }
+    },
+    "20251212_165738": {
+        "image_file": "20251212_165738.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18909697222222,
+                "lon": 16.354829972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:57:42"
+        }
+    },
+    "20251212_165936": {
+        "image_file": "20251212_165936.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18902297222222,
+                "lon": 16.354856
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:59:38"
+        }
+    },
+    "20251212_165942": {
+        "image_file": "20251212_165942.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.189012999999996,
+                "lon": 16.354866972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:59:45"
+        }
+    },
+    "20251212_170047": {
+        "image_file": "20251212_170047.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18887697222222,
+                "lon": 16.354437972222225
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:00:51"
+        }
+    },
+    "20251212_170054": {
+        "image_file": "20251212_170054.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18886597222222,
+                "lon": 16.354426
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:00:58"
+        }
+    },
+    "20251212_170113": {
+        "image_file": "20251212_170113.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.188787999999995,
+                "lon": 16.354441
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:01:16"
+        }
+    },
+    "20251212_170139": {
+        "image_file": "20251212_170139.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.188722999999996,
+                "lon": 16.354431
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:01:42"
+        }
+    },
+    "20251212_170219": {
+        "image_file": "20251212_170219.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18883739972222,
+                "lon": 16.354330999722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:02:19"
+        }
+    },
+    "20251212_170421": {
+        "image_file": "20251212_170421.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18849697222222,
+                "lon": 16.353688972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:04:22"
+        }
+    },
+    "20251212_171231": {
+        "image_file": "20251212_171231.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.18923397222222,
+                "lon": 16.352965972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 17:12:38"
+        }
+    },
+    "20251212_142526": {
+        "image_file": "20251212_142526.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2131928,
+                "lon": 16.324348499722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:25:26"
+        }
+    },
+    "20251212_142537": {
+        "image_file": "20251212_142537.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213259972222225,
+                "lon": 16.324365
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:25:38"
+        }
+    },
+    "20251212_142540": {
+        "image_file": "20251212_142540.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213251972222224,
+                "lon": 16.324362999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:25:41"
+        }
+    },
+    "20251212_142549": {
+        "image_file": "20251212_142549.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2132598,
+                "lon": 16.3243869
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:25:49"
+        }
+    },
+    "20251212_142552": {
+        "image_file": "20251212_142552.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213272,
+                "lon": 16.324376499722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:25:52"
+        }
+    },
+    "20251212_142632": {
+        "image_file": "20251212_142632.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2131983,
+                "lon": 16.324877099722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:26:32"
+        }
+    },
+    "20251212_142648": {
+        "image_file": "20251212_142648.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213163799722224,
+                "lon": 16.324780999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:26:48"
+        }
+    },
+    "20251212_142656": {
+        "image_file": "20251212_142656.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21316589972223,
+                "lon": 16.3247681
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:26:56"
+        }
+    },
+    "20251212_142706": {
+        "image_file": "20251212_142706.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213158972222224,
+                "lon": 16.324842
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:27:07"
+        }
+    },
+    "20251212_142723": {
+        "image_file": "20251212_142723.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213166299722225,
+                "lon": 16.3248508
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:27:24"
+        }
+    },
+    "20251212_142756": {
+        "image_file": "20251212_142756.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213044699722225,
+                "lon": 16.325123999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:27:56"
+        }
+    },
+    "20251212_142822": {
+        "image_file": "20251212_142822.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213000299722225,
+                "lon": 16.325167099999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:28:22"
+        }
+    },
+    "20251212_142824": {
+        "image_file": "20251212_142824.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212998599722226,
+                "lon": 16.3251783
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:28:24"
+        }
+    },
+    "20251212_142838": {
+        "image_file": "20251212_142838.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21300899972223,
+                "lon": 16.3252364
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:28:38"
+        }
+    },
+    "20251212_142940": {
+        "image_file": "20251212_142940.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2130239,
+                "lon": 16.3251956
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:29:40"
+        }
+    },
+    "20251212_143107": {
+        "image_file": "20251212_143107.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212620972222226,
+                "lon": 16.325238972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:08"
+        }
+    },
+    "20251212_143113": {
+        "image_file": "20251212_143113.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21261799972223,
+                "lon": 16.325126999722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:13"
+        }
+    },
+    "20251212_143128": {
+        "image_file": "20251212_143128.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212553972222224,
+                "lon": 16.324943972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:28"
+        }
+    },
+    "20251212_143130": {
+        "image_file": "20251212_143130.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212560799722226,
+                "lon": 16.324940099722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:30"
+        }
+    },
+    "20251212_143133": {
+        "image_file": "20251212_143133.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21256,
+                "lon": 16.324939
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:33"
+        }
+    },
+    "20251212_143135": {
+        "image_file": "20251212_143135.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21256,
+                "lon": 16.324939
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:35"
+        }
+    },
+    "20251212_143142": {
+        "image_file": "20251212_143142.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212513972222226,
+                "lon": 16.324978972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:43"
+        }
+    },
+    "20251212_143158": {
+        "image_file": "20251212_143158.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2124011,
+                "lon": 16.3250609
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:31:59"
+        }
+    },
+    "20251212_143411": {
+        "image_file": "20251212_143411.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2125746,
+                "lon": 16.3250062
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:34:11"
+        }
+    },
+    "20251212_144522": {
+        "image_file": "20251212_144522.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2129446,
+                "lon": 16.3256376
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:45:22"
+        }
+    },
+    "20251212_144742": {
+        "image_file": "20251212_144742.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212941972222225,
+                "lon": 16.325607972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:47:42"
+        }
+    },
+    "20251212_144746": {
+        "image_file": "20251212_144746.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21295429972223,
+                "lon": 16.3255826
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:47:46"
+        }
+    },
+    "20251212_144748": {
+        "image_file": "20251212_144748.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2129367,
+                "lon": 16.3255966
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:47:48"
+        }
+    },
+    "20251212_144751": {
+        "image_file": "20251212_144751.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2129295,
+                "lon": 16.3256152
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:47:51"
+        }
+    },
+    "20251212_144755": {
+        "image_file": "20251212_144755.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212921899722225,
+                "lon": 16.325686399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:47:56"
+        }
+    },
+    "20251212_144905": {
+        "image_file": "20251212_144905.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2128656,
+                "lon": 16.32593579972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:49:06"
+        }
+    },
+    "20251212_144949": {
+        "image_file": "20251212_144949.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212829499722226,
+                "lon": 16.325911399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:49:49"
+        }
+    },
+    "20251212_145008": {
+        "image_file": "20251212_145008.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2127915,
+                "lon": 16.3260846
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:50:08"
+        }
+    },
+    "20251212_145013": {
+        "image_file": "20251212_145013.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212803,
+                "lon": 16.326124799722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:50:13"
+        }
+    },
+    "20251212_145015": {
+        "image_file": "20251212_145015.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212802,
+                "lon": 16.32613339972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:50:15"
+        }
+    },
+    "20251212_145019": {
+        "image_file": "20251212_145019.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2127947,
+                "lon": 16.326161299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:50:19"
+        }
+    },
+    "20251212_145034": {
+        "image_file": "20251212_145034.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.212795972222224,
+                "lon": 16.326163972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:50:35"
+        }
+    },
+    "20251212_145204": {
+        "image_file": "20251212_145204.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21312,
+                "lon": 16.325914
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:52:04"
+        }
+    },
+    "20251212_145324": {
+        "image_file": "20251212_145324.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213529299722225,
+                "lon": 16.325472699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:53:24"
+        }
+    },
+    "20251212_145344": {
+        "image_file": "20251212_145344.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2137145,
+                "lon": 16.3254972
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:53:44"
+        }
+    },
+    "20251212_145401": {
+        "image_file": "20251212_145401.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2138124,
+                "lon": 16.325499999999998
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:54:01"
+        }
+    },
+    "20251212_145509": {
+        "image_file": "20251212_145509.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21435759972223,
+                "lon": 16.3256203
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:55:09"
+        }
+    },
+    "20251212_145513": {
+        "image_file": "20251212_145513.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214348299722225,
+                "lon": 16.325662399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:55:13"
+        }
+    },
+    "20251212_145529": {
+        "image_file": "20251212_145529.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2144458,
+                "lon": 16.3256963
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:55:29"
+        }
+    },
+    "20251212_145556": {
+        "image_file": "20251212_145556.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214610399722226,
+                "lon": 16.3258179
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:55:56"
+        }
+    },
+    "20251212_145614": {
+        "image_file": "20251212_145614.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214599999722225,
+                "lon": 16.3259341
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:56:14"
+        }
+    },
+    "20251212_145646": {
+        "image_file": "20251212_145646.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21468589972223,
+                "lon": 16.3260061
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:56:46"
+        }
+    },
+    "20251212_145652": {
+        "image_file": "20251212_145652.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2147292,
+                "lon": 16.3260113
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:56:52"
+        }
+    },
+    "20251212_145659": {
+        "image_file": "20251212_145659.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214731399722226,
+                "lon": 16.326020499722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:56:59"
+        }
+    },
+    "20251212_145713": {
+        "image_file": "20251212_145713.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2147243,
+                "lon": 16.326034799722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:57:13"
+        }
+    },
+    "20251212_145822": {
+        "image_file": "20251212_145822.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.215127299722226,
+                "lon": 16.325764299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:58:22"
+        }
+    },
+    "20251212_145828": {
+        "image_file": "20251212_145828.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.215152099722225,
+                "lon": 16.325718299722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:58:28"
+        }
+    },
+    "20251212_145908": {
+        "image_file": "20251212_145908.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21518389972223,
+                "lon": 16.3256276
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 14:59:09"
+        }
+    },
+    "20251212_150000": {
+        "image_file": "20251212_150000.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.215249999722225,
+                "lon": 16.3253197
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:00:00"
+        }
+    },
+    "20251212_150246": {
+        "image_file": "20251212_150246.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214404199722225,
+                "lon": 16.32431
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:02:46"
+        }
+    },
+    "20251212_150419": {
+        "image_file": "20251212_150419.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21441597222223,
+                "lon": 16.323686972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:04:20"
+        }
+    },
+    "20251212_150425": {
+        "image_file": "20251212_150425.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214407,
+                "lon": 16.3236746
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:04:25"
+        }
+    },
+    "20251212_150502": {
+        "image_file": "20251212_150502.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.214522,
+                "lon": 16.3232627
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:05:02"
+        }
+    },
+    "20251212_150518": {
+        "image_file": "20251212_150518.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2145176,
+                "lon": 16.323311
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:05:18"
+        }
+    },
+    "20251212_150627": {
+        "image_file": "20251212_150627.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21450719972223,
+                "lon": 16.323254399722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:06:27"
+        }
+    },
+    "20251212_151121": {
+        "image_file": "20251212_151121.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2144879,
+                "lon": 16.3226908
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:11:21"
+        }
+    },
+    "20251212_151151": {
+        "image_file": "20251212_151151.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.21443659972223,
+                "lon": 16.322318299722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:11:52"
+        }
+    },
+    "20251212_151322": {
+        "image_file": "20251212_151322.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.213585899722226,
+                "lon": 16.3224945
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:13:22"
+        }
+    },
+    "20251212_153317": {
+        "image_file": "20251212_153317.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.209615972222224,
+                "lon": 16.34869897222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:33:18"
+        }
+    },
+    "20251212_153940": {
+        "image_file": "20251212_153940.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.2097581,
+                "lon": 16.34885919972222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 15:39:40"
+        }
+    },
+    "20251212_160009": {
+        "image_file": "20251212_160009.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.190938499999994,
+                "lon": 16.353826999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:12:12 16:00:09"
+        }
+    },
+    "20251114_141109": {
+        "image_file": "20251114_141109.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:11:09"
+        }
+    },
+    "20251114_141253": {
+        "image_file": "20251114_141253.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:12:54"
+        }
+    },
+    "20251114_141254": {
+        "image_file": "20251114_141254.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:12:55"
+        }
+    },
+    "20251114_141259": {
+        "image_file": "20251114_141259.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:12:59"
+        }
+    },
+    "20251114_141338": {
+        "image_file": "20251114_141338.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:13:38"
+        }
+    },
+    "20251114_141339": {
+        "image_file": "20251114_141339.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:13:40"
+        }
+    },
+    "20251114_141405": {
+        "image_file": "20251114_141405.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:14:05"
+        }
+    },
+    "20251114_141514": {
+        "image_file": "20251114_141514.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:15:14"
+        }
+    },
+    "20251114_141925": {
+        "image_file": "20251114_141925.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:19:25"
+        }
+    },
+    "20251114_142027": {
+        "image_file": "20251114_142027.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:20:27"
+        }
+    },
+    "20251114_142101": {
+        "image_file": "20251114_142101.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:21:02"
+        }
+    },
+    "20251114_142215": {
+        "image_file": "20251114_142215.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:22:15"
+        }
+    },
+    "20251114_142224": {
+        "image_file": "20251114_142224.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:22:24"
+        }
+    },
+    "20251114_142307": {
+        "image_file": "20251114_142307.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:23:07"
+        }
+    },
+    "20251114_144149": {
+        "image_file": "20251114_144149.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:41:50"
+        }
+    },
+    "20251114_144513": {
+        "image_file": "20251114_144513.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:45:14"
+        }
+    },
+    "20251114_144552": {
+        "image_file": "20251114_144552.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:45:53"
+        }
+    },
+    "20251114_144626": {
+        "image_file": "20251114_144626.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:46:26"
+        }
+    },
+    "20251114_144705": {
+        "image_file": "20251114_144705.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:47:05"
+        }
+    },
+    "20251114_144706": {
+        "image_file": "20251114_144706.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:47:06"
+        }
+    },
+    "20251114_144740": {
+        "image_file": "20251114_144740.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:47:40"
+        }
+    },
+    "20251114_144826": {
+        "image_file": "20251114_144826.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 14:48:26"
+        }
+    },
+    "20251114_150905": {
+        "image_file": "20251114_150905.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 15:09:06"
+        }
+    },
+    "20251114_150914": {
+        "image_file": "20251114_150914.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 15:09:15"
+        }
+    },
+    "20251114_151045": {
+        "image_file": "20251114_151045.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 15:10:45"
+        }
+    },
+    "20251114_151141": {
+        "image_file": "20251114_151141.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:14 15:11:41"
+        }
+    },
+    "20251115_123136": {
+        "image_file": "20251115_123136.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:31:36"
+        }
+    },
+    "20251115_124230": {
+        "image_file": "20251115_124230.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:42:30"
+        }
+    },
+    "20251115_124233": {
+        "image_file": "20251115_124233.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:42:33"
+        }
+    },
+    "20251115_124242": {
+        "image_file": "20251115_124242.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:42:42"
+        }
+    },
+    "20251115_124301": {
+        "image_file": "20251115_124301.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:43:01"
+        }
+    },
+    "20251115_124325": {
+        "image_file": "20251115_124325.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:43:25"
+        }
+    },
+    "20251115_124528": {
+        "image_file": "20251115_124528.jpg",
+        "metadata": {
+            "location": "NO_GPS_FOUND",
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 12:45:29"
+        }
+    },
+    "20251115_212452": {
+        "image_file": "20251115_212452.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19399189999999,
+                "lon": 16.307127699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:15 21:24:52"
+        }
+    },
+    "20251116_105636": {
+        "image_file": "20251116_105636.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19420819972222,
+                "lon": 16.307652799722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:56:37"
+        }
+    },
+    "20251116_105658": {
+        "image_file": "20251116_105658.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194011499999995,
+                "lon": 16.307591599722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:56:59"
+        }
+    },
+    "20251116_105704": {
+        "image_file": "20251116_105704.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194021199999995,
+                "lon": 16.3075948
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:05"
+        }
+    },
+    "20251116_105707": {
+        "image_file": "20251116_105707.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19403199972222,
+                "lon": 16.3075788
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:07"
+        }
+    },
+    "20251116_105717": {
+        "image_file": "20251116_105717.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193967199999996,
+                "lon": 16.307569399722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:17"
+        }
+    },
+    "20251116_105724": {
+        "image_file": "20251116_105724.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193910599999995,
+                "lon": 16.307564899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:25"
+        }
+    },
+    "20251116_105732": {
+        "image_file": "20251116_105732.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19383179972222,
+                "lon": 16.3076061
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:32"
+        }
+    },
+    "20251116_105745": {
+        "image_file": "20251116_105745.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193712899999994,
+                "lon": 16.307667399722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:45"
+        }
+    },
+    "20251116_105752": {
+        "image_file": "20251116_105752.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.1937207,
+                "lon": 16.3076529
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:57:52"
+        }
+    },
+    "20251116_105807": {
+        "image_file": "20251116_105807.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19370709972222,
+                "lon": 16.3078696
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:08"
+        }
+    },
+    "20251116_105817": {
+        "image_file": "20251116_105817.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193687399999995,
+                "lon": 16.307970399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:17"
+        }
+    },
+    "20251116_105820": {
+        "image_file": "20251116_105820.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19370709972222,
+                "lon": 16.307967
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:21"
+        }
+    },
+    "20251116_105826": {
+        "image_file": "20251116_105826.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19369619972222,
+                "lon": 16.3080193
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:26"
+        }
+    },
+    "20251116_105837": {
+        "image_file": "20251116_105837.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19368539972222,
+                "lon": 16.308132199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:37"
+        }
+    },
+    "20251116_105846": {
+        "image_file": "20251116_105846.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193658899999996,
+                "lon": 16.3082527
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:46"
+        }
+    },
+    "20251116_105849": {
+        "image_file": "20251116_105849.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19365729972222,
+                "lon": 16.308268
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:58:49"
+        }
+    },
+    "20251116_105900": {
+        "image_file": "20251116_105900.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.1936526,
+                "lon": 16.3084004
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:00"
+        }
+    },
+    "20251116_105906": {
+        "image_file": "20251116_105906.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193660799999996,
+                "lon": 16.308491199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:06"
+        }
+    },
+    "20251116_105922": {
+        "image_file": "20251116_105922.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19368089972222,
+                "lon": 16.3087181
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:22"
+        }
+    },
+    "20251116_105930": {
+        "image_file": "20251116_105930.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19368409972222,
+                "lon": 16.308772199722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:30"
+        }
+    },
+    "20251116_105936": {
+        "image_file": "20251116_105936.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193715899999994,
+                "lon": 16.3087929
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:36"
+        }
+    },
+    "20251116_105955": {
+        "image_file": "20251116_105955.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193883099999994,
+                "lon": 16.3089431
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:55"
+        }
+    },
+    "20251116_105957": {
+        "image_file": "20251116_105957.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193892299999995,
+                "lon": 16.308926499722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 10:59:57"
+        }
+    },
+    "20251116_110015": {
+        "image_file": "20251116_110015.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194070399999994,
+                "lon": 16.3088978
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:00:15"
+        }
+    },
+    "20251116_110037": {
+        "image_file": "20251116_110037.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19428959972222,
+                "lon": 16.3090294
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:00:38"
+        }
+    },
+    "20251116_110045": {
+        "image_file": "20251116_110045.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19434699999999,
+                "lon": 16.309050599722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:00:45"
+        }
+    },
+    "20251116_110100": {
+        "image_file": "20251116_110100.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194380499999994,
+                "lon": 16.309138999722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:01:00"
+        }
+    },
+    "20251116_110111": {
+        "image_file": "20251116_110111.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19445759972222,
+                "lon": 16.309137499722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:01:11"
+        }
+    },
+    "20251116_110128": {
+        "image_file": "20251116_110128.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19457299972222,
+                "lon": 16.3090744
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:01:28"
+        }
+    },
+    "20251116_110132": {
+        "image_file": "20251116_110132.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19459179972222,
+                "lon": 16.3090797
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:01:32"
+        }
+    },
+    "20251116_110151": {
+        "image_file": "20251116_110151.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194739399999996,
+                "lon": 16.309014
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:01:52"
+        }
+    },
+    "20251116_110205": {
+        "image_file": "20251116_110205.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19482349972222,
+                "lon": 16.309052999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:02:05"
+        }
+    },
+    "20251116_110230": {
+        "image_file": "20251116_110230.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19502179972222,
+                "lon": 16.308989
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:02:31"
+        }
+    },
+    "20251116_110246": {
+        "image_file": "20251116_110246.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19514097222222,
+                "lon": 16.308991972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:02:46"
+        }
+    },
+    "20251116_110304": {
+        "image_file": "20251116_110304.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19527719972222,
+                "lon": 16.3089161
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:03:04"
+        }
+    },
+    "20251116_110323": {
+        "image_file": "20251116_110323.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19543649972222,
+                "lon": 16.3087948
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:03:23"
+        }
+    },
+    "20251116_110405": {
+        "image_file": "20251116_110405.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19586197222222,
+                "lon": 16.308538972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:04:06"
+        }
+    },
+    "20251116_110411": {
+        "image_file": "20251116_110411.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19586089972222,
+                "lon": 16.3085355
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:04:11"
+        }
+    },
+    "20251116_110432": {
+        "image_file": "20251116_110432.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19586949999999,
+                "lon": 16.3085953
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:04:32"
+        }
+    },
+    "20251116_110506": {
+        "image_file": "20251116_110506.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19570099972222,
+                "lon": 16.3085442
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:05:06"
+        }
+    },
+    "20251116_110509": {
+        "image_file": "20251116_110509.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19571009972222,
+                "lon": 16.308552899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:05:09"
+        }
+    },
+    "20251116_110544": {
+        "image_file": "20251116_110544.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19592997222222,
+                "lon": 16.308226
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:05:44"
+        }
+    },
+    "20251116_110558": {
+        "image_file": "20251116_110558.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195935999999996,
+                "lon": 16.308059
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:05:58"
+        }
+    },
+    "20251116_110608": {
+        "image_file": "20251116_110608.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19599109999999,
+                "lon": 16.3079548
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:06:08"
+        }
+    },
+    "20251116_110637": {
+        "image_file": "20251116_110637.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19607797222222,
+                "lon": 16.307528972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:06:37"
+        }
+    },
+    "20251116_110645": {
+        "image_file": "20251116_110645.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19606269972222,
+                "lon": 16.307456399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:06:45"
+        }
+    },
+    "20251116_110649": {
+        "image_file": "20251116_110649.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.196020999999995,
+                "lon": 16.307417
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:06:50"
+        }
+    },
+    "20251116_110709": {
+        "image_file": "20251116_110709.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19592709972222,
+                "lon": 16.307149599722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:07:09"
+        }
+    },
+    "20251116_110715": {
+        "image_file": "20251116_110715.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19589359972222,
+                "lon": 16.3070838
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:07:15"
+        }
+    },
+    "20251116_110727": {
+        "image_file": "20251116_110727.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195958999999995,
+                "lon": 16.306978972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:07:27"
+        }
+    },
+    "20251116_110739": {
+        "image_file": "20251116_110739.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19599097222222,
+                "lon": 16.306839
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:07:39"
+        }
+    },
+    "20251116_110804": {
+        "image_file": "20251116_110804.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19592397222222,
+                "lon": 16.306371972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:04"
+        }
+    },
+    "20251116_110809": {
+        "image_file": "20251116_110809.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19590997222222,
+                "lon": 16.306319972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:10"
+        }
+    },
+    "20251116_110815": {
+        "image_file": "20251116_110815.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19586997222222,
+                "lon": 16.306249972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:16"
+        }
+    },
+    "20251116_110821": {
+        "image_file": "20251116_110821.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195842999999996,
+                "lon": 16.306218972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:21"
+        }
+    },
+    "20251116_110830": {
+        "image_file": "20251116_110830.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195820999999995,
+                "lon": 16.306148
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:31"
+        }
+    },
+    "20251116_110836": {
+        "image_file": "20251116_110836.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19580799972222,
+                "lon": 16.306151899722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:36"
+        }
+    },
+    "20251116_110849": {
+        "image_file": "20251116_110849.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195755999999996,
+                "lon": 16.3060113
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:08:50"
+        }
+    },
+    "20251116_110922": {
+        "image_file": "20251116_110922.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195821699999996,
+                "lon": 16.305737199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:09:22"
+        }
+    },
+    "20251116_110940": {
+        "image_file": "20251116_110940.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19583049972222,
+                "lon": 16.305674899722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:09:41"
+        }
+    },
+    "20251116_110952": {
+        "image_file": "20251116_110952.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195792999999995,
+                "lon": 16.305531999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:09:52"
+        }
+    },
+    "20251116_111005": {
+        "image_file": "20251116_111005.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195750999999994,
+                "lon": 16.30547897222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:10:05"
+        }
+    },
+    "20251116_111111": {
+        "image_file": "20251116_111111.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195313999999996,
+                "lon": 16.306059972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:11:12"
+        }
+    },
+    "20251116_111129": {
+        "image_file": "20251116_111129.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195161999999996,
+                "lon": 16.306128972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:11:29"
+        }
+    },
+    "20251116_111136": {
+        "image_file": "20251116_111136.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195121199999996,
+                "lon": 16.306112699722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:11:36"
+        }
+    },
+    "20251116_111151": {
+        "image_file": "20251116_111151.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19502349972222,
+                "lon": 16.3062426
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:11:51"
+        }
+    },
+    "20251116_111159": {
+        "image_file": "20251116_111159.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19503029972222,
+                "lon": 16.3062125
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:12:00"
+        }
+    },
+    "20251116_111223": {
+        "image_file": "20251116_111223.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194873699999995,
+                "lon": 16.3061617
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:12:23"
+        }
+    },
+    "20251116_111301": {
+        "image_file": "20251116_111301.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194615999999996,
+                "lon": 16.306329
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:13:02"
+        }
+    },
+    "20251116_111324": {
+        "image_file": "20251116_111324.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194533899999996,
+                "lon": 16.3062252
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:13:25"
+        }
+    },
+    "20251116_111347": {
+        "image_file": "20251116_111347.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19429939972222,
+                "lon": 16.3063125
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:13:47"
+        }
+    },
+    "20251116_111353": {
+        "image_file": "20251116_111353.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19425729972222,
+                "lon": 16.3063223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:13:53"
+        }
+    },
+    "20251116_111359": {
+        "image_file": "20251116_111359.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19418879972222,
+                "lon": 16.3063791
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:14:00"
+        }
+    },
+    "20251116_111408": {
+        "image_file": "20251116_111408.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194129999999994,
+                "lon": 16.306371972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:14:09"
+        }
+    },
+    "20251116_111421": {
+        "image_file": "20251116_111421.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194070999999994,
+                "lon": 16.3063606
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:14:21"
+        }
+    },
+    "20251116_111434": {
+        "image_file": "20251116_111434.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19399169972222,
+                "lon": 16.3063937
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:14:35"
+        }
+    },
+    "20251116_111441": {
+        "image_file": "20251116_111441.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193937999999996,
+                "lon": 16.306391
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:14:42"
+        }
+    },
+    "20251116_111507": {
+        "image_file": "20251116_111507.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193785899999995,
+                "lon": 16.3067378
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:15:07"
+        }
+    },
+    "20251116_111516": {
+        "image_file": "20251116_111516.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193796999999996,
+                "lon": 16.306864
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:15:16"
+        }
+    },
+    "20251116_111536": {
+        "image_file": "20251116_111536.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193707999999994,
+                "lon": 16.307127
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:15:36"
+        }
+    },
+    "20251116_111615": {
+        "image_file": "20251116_111615.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19380209972222,
+                "lon": 16.307611999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:16:15"
+        }
+    },
+    "20251116_111625": {
+        "image_file": "20251116_111625.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19392719972222,
+                "lon": 16.30758
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:16:25"
+        }
+    },
+    "20251116_111631": {
+        "image_file": "20251116_111631.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.193925,
+                "lon": 16.307643972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:16:32"
+        }
+    },
+    "20251116_111646": {
+        "image_file": "20251116_111646.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194081999999995,
+                "lon": 16.3078
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:16:47"
+        }
+    },
+    "20251116_111719_001": {
+        "image_file": "20251116_111719_001.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19445697222222,
+                "lon": 16.307959
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:17:19"
+        }
+    },
+    "20251116_111748": {
+        "image_file": "20251116_111748.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19474199972222,
+                "lon": 16.308152599722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:17:48"
+        }
+    },
+    "20251116_111758": {
+        "image_file": "20251116_111758.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194813599999996,
+                "lon": 16.308154399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:17:58"
+        }
+    },
+    "20251116_111803": {
+        "image_file": "20251116_111803.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19484479972222,
+                "lon": 16.3081615
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:04"
+        }
+    },
+    "20251116_111814": {
+        "image_file": "20251116_111814.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19497497222222,
+                "lon": 16.308144972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:15"
+        }
+    },
+    "20251116_111820": {
+        "image_file": "20251116_111820.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195007399999994,
+                "lon": 16.3081263
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:20"
+        }
+    },
+    "20251116_111827": {
+        "image_file": "20251116_111827.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19508679972222,
+                "lon": 16.3080858
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:27"
+        }
+    },
+    "20251116_111841": {
+        "image_file": "20251116_111841.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195239599999994,
+                "lon": 16.3080205
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:41"
+        }
+    },
+    "20251116_111846": {
+        "image_file": "20251116_111846.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19530189972222,
+                "lon": 16.308050699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:46"
+        }
+    },
+    "20251116_111854": {
+        "image_file": "20251116_111854.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19540039972222,
+                "lon": 16.3080131
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:18:54"
+        }
+    },
+    "20251116_111906": {
+        "image_file": "20251116_111906.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195511499999995,
+                "lon": 16.308014899722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:19:06"
+        }
+    },
+    "20251116_111911": {
+        "image_file": "20251116_111911.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19556897222222,
+                "lon": 16.308046972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:19:12"
+        }
+    },
+    "20251116_111919": {
+        "image_file": "20251116_111919.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.1956597,
+                "lon": 16.308054399722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:19:19"
+        }
+    },
+    "20251116_111958": {
+        "image_file": "20251116_111958.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195879999999995,
+                "lon": 16.308272699722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:19:58"
+        }
+    },
+    "20251116_112004": {
+        "image_file": "20251116_112004.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19589249972222,
+                "lon": 16.308260499722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:20:04"
+        }
+    },
+    "20251116_112014": {
+        "image_file": "20251116_112014.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195946899999996,
+                "lon": 16.308209399722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:20:15"
+        }
+    },
+    "20251116_112048": {
+        "image_file": "20251116_112048.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.196101199999994,
+                "lon": 16.3076352
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:20:48"
+        }
+    },
+    "20251116_112103": {
+        "image_file": "20251116_112103.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19598369972222,
+                "lon": 16.307395199722222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:21:03"
+        }
+    },
+    "20251116_112116": {
+        "image_file": "20251116_112116.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19585399972222,
+                "lon": 16.307332899722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:21:16"
+        }
+    },
+    "20251116_112124": {
+        "image_file": "20251116_112124.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19579499972222,
+                "lon": 16.307310499722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:21:24"
+        }
+    },
+    "20251116_112133": {
+        "image_file": "20251116_112133.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19574159972222,
+                "lon": 16.307262999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:21:33"
+        }
+    },
+    "20251116_112144": {
+        "image_file": "20251116_112144.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195693199999994,
+                "lon": 16.3071854
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:21:44"
+        }
+    },
+    "20251116_112210": {
+        "image_file": "20251116_112210.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19537699999999,
+                "lon": 16.307173972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:22:11"
+        }
+    },
+    "20251116_112224": {
+        "image_file": "20251116_112224.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19524897222222,
+                "lon": 16.307185
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:22:25"
+        }
+    },
+    "20251116_112236": {
+        "image_file": "20251116_112236.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19516949972222,
+                "lon": 16.307265699722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:22:37"
+        }
+    },
+    "20251116_112247": {
+        "image_file": "20251116_112247.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19508969972222,
+                "lon": 16.307311699722224
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:22:47"
+        }
+    },
+    "20251116_112253": {
+        "image_file": "20251116_112253.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19509029972222,
+                "lon": 16.3073303
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:22:53"
+        }
+    },
+    "20251116_112306": {
+        "image_file": "20251116_112306.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19501697222222,
+                "lon": 16.307263972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:23:07"
+        }
+    },
+    "20251116_112317": {
+        "image_file": "20251116_112317.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19503697222222,
+                "lon": 16.307172
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:23:18"
+        }
+    },
+    "20251116_112325": {
+        "image_file": "20251116_112325.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195063999999995,
+                "lon": 16.307082972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:23:25"
+        }
+    },
+    "20251116_112341": {
+        "image_file": "20251116_112341.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195054999999996,
+                "lon": 16.306844
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:23:42"
+        }
+    },
+    "20251116_112358": {
+        "image_file": "20251116_112358.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19506229972222,
+                "lon": 16.3065828
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:23:58"
+        }
+    },
+    "20251116_112419": {
+        "image_file": "20251116_112419.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19506979972222,
+                "lon": 16.306270999722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:24:19"
+        }
+    },
+    "20251116_112436": {
+        "image_file": "20251116_112436.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19505649972222,
+                "lon": 16.306463
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:24:36"
+        }
+    },
+    "20251116_112443": {
+        "image_file": "20251116_112443.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19514519972222,
+                "lon": 16.3065977
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:24:43"
+        }
+    },
+    "20251116_112459": {
+        "image_file": "20251116_112459.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195157599999995,
+                "lon": 16.3069822
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:24:59"
+        }
+    },
+    "20251116_112534": {
+        "image_file": "20251116_112534.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19502049972222,
+                "lon": 16.3075316
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:25:34"
+        }
+    },
+    "20251116_112546": {
+        "image_file": "20251116_112546.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195010399999994,
+                "lon": 16.307651199722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:25:46"
+        }
+    },
+    "20251116_112553": {
+        "image_file": "20251116_112553.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.195011199999996,
+                "lon": 16.3075888
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:25:53"
+        }
+    },
+    "20251116_112604": {
+        "image_file": "20251116_112604.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19501459999999,
+                "lon": 16.3074392
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:26:04"
+        }
+    },
+    "20251116_112610": {
+        "image_file": "20251116_112610.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19497739972222,
+                "lon": 16.3074553
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:26:10"
+        }
+    },
+    "20251116_112620": {
+        "image_file": "20251116_112620.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19492949999999,
+                "lon": 16.3073772
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:26:20"
+        }
+    },
+    "20251116_112631": {
+        "image_file": "20251116_112631.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194856099999996,
+                "lon": 16.3073397
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:26:31"
+        }
+    },
+    "20251116_112642": {
+        "image_file": "20251116_112642.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19479249972222,
+                "lon": 16.307396799722223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:26:42"
+        }
+    },
+    "20251116_112717": {
+        "image_file": "20251116_112717.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194427999999995,
+                "lon": 16.307503
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:27:18"
+        }
+    },
+    "20251116_112722": {
+        "image_file": "20251116_112722.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.194387972222216,
+                "lon": 16.307439972222223
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:27:23"
+        }
+    },
+    "20251116_112731": {
+        "image_file": "20251116_112731.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19429697222222,
+                "lon": 16.307424972222222
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:27:32"
+        }
+    },
+    "20251116_112751": {
+        "image_file": "20251116_112751.jpg",
+        "metadata": {
+            "location": {
+                "lat": 48.19409769999999,
+                "lon": 16.3074349
+            },
+            "direction": "NO_DIRECTION",
+            "timestamp": "2025:11:16 11:27:51"
+        }
+    }
+}
