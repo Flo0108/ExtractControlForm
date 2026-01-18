@@ -16,70 +16,63 @@
   html, body { height: 100%; margin: 0; }
   #map { width: 100%; height: 100%; }
 
-  /* Tool Sidebar (Left) */
-  #tool-sidebar {
+  #tool-sidebar, #topic-sidebar {
     position: absolute;
-    top: 10%;
-    left: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px;
     border-radius: 8px;
-  }
-  #tool-sidebar button {
-    cursor: pointer;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    background: #fff;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  #tool-sidebar button.selected {
-    background: #c75430;
-    color: white;
-    border-color: #c75430;
+    max-height: 90%;
+    overflow-y: auto;
   }
 
-  /* Topic Sidebar (Right) */
-  #topic-sidebar {
-    position: absolute;
-    top: 40%;
-    left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  #topic-sidebar button {
+  /* Tool sidebar: top-left */
+  #tool-sidebar { top: 10px; left: 10px; }
+  /* Topic sidebar: top-right */
+  #topic-sidebar { top: 10px; right: 10px; }
+
+  button {
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border: 1px solid #ccc;
     background: #fff;
     border-radius: 4px;
     font-size: 14px;
+    text-align: left;
   }
-  #topic-sidebar button.selected {
-    background: #c75430;
-    color: white;
-    border-color: #c75430;
+  button.selected { background: #c75430; color: #fff; border-color: #c75430; }
+
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    #tool-sidebar, #topic-sidebar {
+      flex-direction: row;
+      top: auto;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      justify-content: space-around;
+      max-height: none;
+      width: auto;
+    }
+    button { font-size: 12px; padding: 6px 8px; }
   }
+
 </style>
 </head>
 <body>
 
 <!-- Tool Sidebar -->
+<!-- Tool Sidebar -->
 <div id="tool-sidebar">
   <button data-tool="Point">📍 Point</button>
   <button data-tool="Line">📏 Line</button>
   <button data-tool="Arrow">➡️ Arrow</button>
-  <button data-tool="Area">⬛ Area</button>
+  <button data-tool="Polygon">⬛ Area</button>
   <button data-tool="Volume">🟫 Volume</button>
+  <button id="finishPolygonBtn" style="display:none;">✅ Finish Area</button>
 </div>
 
 <!-- Topic Sidebar -->
@@ -94,6 +87,7 @@
 
 
 
+
 <!-- Map Container -->
 <div id="map"></div>
 
@@ -103,6 +97,7 @@
 <!-- Firebase SDK (compat version) -->
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
 
 <!-- Custom Script -->
 <script src="script.js"></script>
