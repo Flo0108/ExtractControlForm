@@ -104,24 +104,7 @@ L.control.layers(
 ).addTo(map);
 map.addLayer(satellite); // show satellite first
 
-// -------------------- Thumbnail Icon with Orange Outline --------------------
-function createThumbnailIcon(imgPath) {
-  return L.divIcon({
-    className: "thumbnail-icon",
-    html: `<div style="
-            width: 32px;
-            height: 32px;
-            border: 1px solid #c75430;  /* orange outline */
-            border-radius: 4px;        /* optional rounded corners */
-            overflow: hidden;
-          ">
-            <img src="${imgPath}" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>`,
-    iconSize: [32, 32],
-    iconAnchor: [12, 12], // center of the icon
-    popupAnchor: [0, -12]
-  });
-}
+
 
 
 
@@ -130,58 +113,195 @@ function createThumbnailIcon(imgPath) {
 const imagePoints = []; // store locations if needed for other purposes
 const imageLayerGroup = L.layerGroup().addTo(map); // all images + backgrounds
 
+
+
+// Store all markers
+const nodes = [];
+const highlightedNodes = new Set();
+
+// --- Create node icon (small, clickable) ---
+function createNodeIcon() {
+  return L.divIcon({
+    html: `<div style="
+      width:30px;
+      height:30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    ">
+      <div style="
+        width:10px;
+        height:10px;
+        background:#b24728;
+        border-radius:4px;
+        border:2px solid transparent;
+        box-sizing:border-box;
+      "></div>
+    </div>`,
+    className: "",
+    iconSize: [50, 50]
+  });
+}
+
+// --- Create highlighted thumbnail (orange outline) ---
+function createThumbnailIcon(imgPath) {
+  return L.divIcon({
+    html: `<div style="
+      width:50px;
+      height:50px;
+      border-radius:6px;
+      border:2px solid orange;
+      background:url('${imgPath}') center/cover no-repeat;
+      opacity:0;
+      transform: scale(0.5);
+    " class="highlighted-thumb"></div>`,
+    className: "",
+    iconSize: [50, 50]
+  });
+}
+
+// --- Attach click handler to show full image with timestamp ---
+function attachNodeClick(marker) {
+  marker.on("click", () => {
+    if (!marker._entry) return;
+    const { image_file, metadata } = marker._entry;
+    const timestamp = metadata?.timestamp || "";
+    const imgPath = `/images/${image_file}`;
+
+    // Full-size popup but constrained
+    const popupContent = `
+      <div style="
+        max-width:500px;
+        min-width:200px;
+        text-align:center;
+      ">
+        <img src="${imgPath}" style="
+          width:100%;
+          max-height:400px;
+          border-radius:6px;
+          object-fit:contain;
+        ">
+        <div style="margin-top:6px; font-size:14px; color:#666;">
+          ${timestamp || ""}
+        </div>
+      </div>
+    `;
+    marker.bindPopup(popupContent).openPopup();
+  });
+}
+
+
+// --- Load markers ---
 async function loadImages() {
   const res = await fetch("./images.json");
   const data = await res.json();
 
-  // Keep track of screen positions to avoid overlaps
   const placedMarkers = [];
 
   Object.values(data).forEach(entry => {
-    if (
-      !entry.metadata ||
-      !entry.metadata.location ||
-      typeof entry.metadata.location.lat !== "number" ||
-      typeof entry.metadata.location.lon !== "number"
-    ) {
+    if (!entry.metadata || !entry.metadata.location ||
+        typeof entry.metadata.location.lat !== "number" ||
+        typeof entry.metadata.location.lon !== "number") {
       console.warn("Image skipped (no valid location):", entry.image_file);
       return;
     }
 
     const { lat, lon } = entry.metadata.location;
-    imagePoints.push({ lat, lon }); // store for other purposes
+    imagePoints.push({ lat, lon });
 
-    const imgPath = `/images/${entry.image_file}`;
-
-
-    // Convert lat/lng to screen coordinates
     const screenPos = map.latLngToContainerPoint([lat, lon]);
-
-    // Check if it overlaps any existing marker (24px threshold)
-    const overlap = placedMarkers.some(p =>
-      Math.abs(p.x - screenPos.x) < 26 && Math.abs(p.y - screenPos.y) < 26
-    );
-    if (overlap) return; // skip this marker
-
+    if (placedMarkers.some(p => Math.abs(p.x - screenPos.x) < 26 &&
+                                 Math.abs(p.y - screenPos.y) < 26)) return;
     placedMarkers.push(screenPos);
 
-    const marker = L.marker([lat, lon], { icon: createThumbnailIcon(imgPath) }).addTo(imageLayerGroup);
+    const marker = L.marker([lat, lon], { icon: createNodeIcon() }).addTo(imageLayerGroup);
+    marker._entry = entry;
+    nodes.push(marker);
 
-    marker.bindPopup(`
-      <img src="${imgPath}" style="width:200px; display:block;">
-      <small>${entry.metadata.timestamp || ""}</small>
-    `);
+    attachNodeClick(marker); // always works
   });
 }
+
+
+function flowyHighlightNodes() {
+  const bounds = map.getBounds();
+  const visibleNodes = nodes.filter(n =>
+    bounds.contains(n.getLatLng()) && !highlightedNodes.has(n)
+  );
+
+  if (visibleNodes.length === 0) return;
+
+  // Pick 1-3 nodes randomly
+  const count = Math.min(Math.floor(Math.random() * 3) + 1, visibleNodes.length);
+
+  for (let i = 0; i < count; i++) {
+    const idx = Math.floor(Math.random() * visibleNodes.length);
+    const marker = visibleNodes[idx];
+    visibleNodes.splice(idx, 1);
+
+    highlightedNodes.add(marker);
+
+    const { image_file } = marker._entry;
+    const imgPath = `/images/${image_file}`;
+
+    // Swap to thumbnail with orange outline
+    marker.setIcon(createThumbnailIcon(imgPath));
+
+    // Animate fade-in
+    const el = marker.getElement().querySelector(".highlighted-thumb");
+    if (el) {
+      requestAnimationFrame(() => {
+        const fadeInDuration = 1500 + Math.random() * 500; // slower fade-in
+        el.style.transition = `opacity ${fadeInDuration}ms ease-in-out, transform ${fadeInDuration}ms ease-out`;
+        el.style.opacity = 1;
+        el.style.transform = "scale(1)";
+      });
+    }
+
+    // ✅ Do NOT fade out or reset the marker
+    // It will stay as a highlighted thumbnail and can still be clicked
+  }
+}
+
+
+// Continuous, flowy highlighting
+function scheduleFlowyHighlights() {
+  const delay = 500 + Math.random() * 3000; // 0.5–3s random delay
+  setTimeout(() => {
+    flowyHighlightNodes();
+    scheduleFlowyHighlights();
+  }, delay);
+}
+
+scheduleFlowyHighlights();
+
+
+
+imageLayerGroup.on("click", (e) => {
+  const marker = e.layer; // the clicked marker
+  if (!marker || !marker._entry) return;
+
+  const { image_file, timestamp } = marker._entry;
+  const imgPath = `/images/${image_file}`;
+
+  marker.bindPopup(`<img src="${imgPath}" style="width:200px;"><small>${timestamp || ""}</small>`).openPopup();
+});
+
+
+
+
 
 // Redraw markers when map moves or zooms
 map.on("moveend zoomend", async () => {
   imageLayerGroup.clearLayers();
+  nodes.length = 0;
   await loadImages();
 });
 
 
 loadImages();
+
 
 
 
@@ -498,34 +618,6 @@ function resetPolygon() {
   }
 }
 
-// Listen to finish button
-document.getElementById("finishPolygonBtn").addEventListener("click", async () => {
-  if (tempPolygonPoints.length < 3) return alert("Add at least 3 points.");
-
-  const note = prompt("Note for this area:");
-  if (!note) return;
-
-  const data = {
-    type: "Polygon",
-    geometry: tempPolygonPoints.map(p => ({ lat: p[0], lng: p[1] })),
-    note,
-    topic: selectedTopic,
-    tool: "Polygon",
-    createdAt: firebase.firestore.FieldValue.serverTimestamp()
-  };
-
-  await db.collection("pins").add(data);
-
-  L.polygon(tempPolygonPoints, {
-    color: topicColors[selectedTopic],
-    fillColor: topicColors[selectedTopic],
-    fillOpacity: 0.2
-  }).addTo(map);
-
-  resetPolygon();
-  drawScreenFixedGrid(imagePoints);
-});
-
 // Finish button logic (add this to your sidebar)
 document.getElementById("finishPolygonBtn").addEventListener("click", async () => {
   if (tempPolygonPoints.length < 3) return alert("Add at least 3 points.");
@@ -621,7 +713,8 @@ function addPinToMap(pin) {
       color: topicColors[pin.topic],
       weight: 3,
       dashArray: pin.type === "Arrow" ? "5,5" : null
-    }).addTo(map);
+    }).addTo(map)
+      .bindPopup(`<b>${pin.note || "No note"}</b><br>${pin.topic || "No topic"} · ${pin.type}`);
   }
 
   if (pin.type === "Polygon") {
