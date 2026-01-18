@@ -112,7 +112,7 @@ map.addLayer(satellite); // show satellite first
 // -------------------- Load Image Markers (optimized, non-overlapping) --------------------
 const imagePoints = []; // store locations if needed for other purposes
 const imageLayerGroup = L.layerGroup().addTo(map); // all images + backgrounds
-
+const linesLayer = L.layerGroup().addTo(map);
 
 
 // Store all markers
@@ -123,41 +123,31 @@ const highlightedNodes = new Set();
 function createNodeIcon() {
   return L.divIcon({
     html: `<div style="
-      width:30px;
-      height:30px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      width:5px;
+      height:5px;
+      background:#b24728;
+      border:2px solid transparent;
+      box-sizing:border-box;
       cursor:pointer;
-    ">
-      <div style="
-        width:10px;
-        height:10px;
-        background:#b24728;
-        border-radius:4px;
-        border:2px solid transparent;
-        box-sizing:border-box;
-      "></div>
-    </div>`,
+    "></div>`,
     className: "",
-    iconSize: [50, 50]
+    iconSize: [20, 20]
   });
 }
-
 // --- Create highlighted thumbnail (orange outline) ---
 function createThumbnailIcon(imgPath) {
   return L.divIcon({
     html: `<div style="
-      width:50px;
-      height:50px;
+      width:30px;
+      height:30px;
       border-radius:6px;
-      border:2px solid orange;
+      border:1px solid orange;
       background:url('${imgPath}') center/cover no-repeat;
       opacity:0;
       transform: scale(0.5);
     " class="highlighted-thumb"></div>`,
     className: "",
-    iconSize: [50, 50]
+    iconSize: [30, 30]
   });
 }
 
@@ -486,11 +476,12 @@ function drawPoint(pin) {
 }
 
 function drawLineLike(pin) {
-  L.polyline(pin.geometry, {
+  const poly = L.polyline(pin.geometry, {
     color: topicColors[pin.topic],
     weight: 3,
     dashArray: pin.type === "Arrow" ? "5,5" : null
-  }).addTo(map);
+  }).addTo(linesLayer) // <-- add here
+    .bindPopup(`<b>${pin.note || "No note"}</b><br>${pin.topic || "No topic"} · ${pin.type}`);
 
   if (pin.type === "Arrow") {
     L.marker(pin.geometry[1], {
@@ -499,11 +490,8 @@ function drawLineLike(pin) {
         className: "",
         iconSize: [20, 20]
       })
-    }).addTo(map);
+    }).addTo(linesLayer); // <-- arrow marker also in same group
   }
-
-  // 🔹 Refresh grid after drawing a new line/arrow
-  drawScreenFixedGrid(imagePoints);
 }
 
 
@@ -575,7 +563,7 @@ async function handlePolygonClick(latlng) {
     tempPolygonLayer = L.polygon(tempPolygonPoints, {
       color: topicColors[selectedTopic],
       weight: 3,
-      fillOpacity: 0.2
+      fillOpacity: 0.4
     }).addTo(map);
   }
 
@@ -634,7 +622,12 @@ document.getElementById("finishPolygonBtn").addEventListener("click", async () =
     createdAt: firebase.firestore.FieldValue.serverTimestamp()
   };
 
-  await addDoc(collection(db, "pins"), { ...data, createdAt: serverTimestamp() });
+  try {
+    await db.collection("pins").add(data); // ✅ v8 syntax
+  } catch (err) {
+    console.error("Failed to save polygon:", err);
+    return;
+  }
 
   // Draw finalized polygon
   L.polygon(tempPolygonPoints, {
@@ -643,16 +636,17 @@ document.getElementById("finishPolygonBtn").addEventListener("click", async () =
     fillOpacity: 0.2
   }).addTo(map);
 
-  // Reset temp
+  // Reset temp polygon
   tempPolygonPoints = [];
   if (tempPolygonLayer) {
     map.removeLayer(tempPolygonLayer);
     tempPolygonLayer = null;
   }
 
-  // Refresh your recursion grid
+  // Refresh recursion grid
   drawScreenFixedGrid(imagePoints);
 });
+
 
 
 function resetPolygon() {
