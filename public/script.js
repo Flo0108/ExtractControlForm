@@ -301,16 +301,9 @@ loadImages();
 
 
 
-// -------------------- Recursion Grid Parameters --------------------
-const maxSubdivision = isMobile ? 2 : 4;
-const minDistance   = isMobile ? 30 : 20;
-const baseSize      = isMobile ? 160 : 100;
-
-console.log("Recursion grid settings:", {
-  maxSubdivision,
-  minDistance,
-  baseSize
-});
+const maxSubdivision = 4;
+const minDistance = 20; // pixels for max subdivision
+const baseSize = 100;   // initial cell size in pixels
 
 
 
